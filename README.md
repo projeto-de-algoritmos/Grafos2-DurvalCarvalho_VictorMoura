@@ -84,11 +84,11 @@ trocados por R$1.001,65 Reais!!!
 ## Hmm... Não sei não Rick...
 
 Bem... Talvez não seja tão simples assim... Existem taxas 
-de câmbio, se você quiser comprar 1 milhão de euros talvez 
-a casa de câmbio não tenha, e se isso funcionasse eu não 
+de câmbio.. Se você quiser comprar 1 milhão de euros talvez 
+a casa de câmbio não tenha... E se isso funcionasse eu não 
 estaria aqui contando pra você...
 
-Maaaaas o escopo desse projeto será simples sim!!
+Maaaaaaas o escopo desse projeto será simples sim!!
 
 E se eu fiquei Bilionário foi porque eu mereci!!
 
