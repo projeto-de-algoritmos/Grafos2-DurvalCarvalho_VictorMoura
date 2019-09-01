@@ -1,4 +1,4 @@
-# Projeto Betina 22
+# Projeto Betina Currency
 
 Esse projeto tem o objetivo de encontrar a melhor 
 sequência de cambios de uma moeda para outra.
