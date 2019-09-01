@@ -20,6 +20,8 @@ Será que o montante final é o mesmo?
 
 As taxas de câmbio dessa simulação foi baseada nos valores monetários do dia 1 de setembro de 2019, com base no site da [Uol](https://economia.uol.com.br/cotacoes/cambio/).
 
+## 1° Cenário
+
 Eu primeiro faço o câmbio de R$1.000,00 Reais para $241.42 Dolares
 <p align="center">
   <img src="imgs/real_to_dolar.png">
@@ -30,10 +32,14 @@ Então faço o câmbio de $241.42 Dolares para ‎₽16.128,80 Rublos.
   <img src="imgs/dollar_to_rublo.png">
 </p>
 
+#### **Resultado** 
+
 Ok, no primeiro cenário consegui ‎₽16.128,80 Rublos
 
-Agora no segundo cenário vamos fazer o câmbio de 
-R$1.000,00 Reais para €219,40 Euros
+## 2° Cenário
+
+Agora vamos fazer o câmbio de R$1.000,00 Reais para 
+€219,40 Euros
 <p align="center">
   <img src="imgs/real_to_euro.png">
 </p>
@@ -42,6 +48,9 @@ E então fazemos o câmbio de €219,40 Euros para ₽16.129,08 Rublos
 <p align="center">
   <img src="imgs/euro_to_rublo.png">
 </p>
+
+#### **Resultado** 
+Ok, no segundo cenário consegui ‎₽16.128,80 Rublos
 
 ## Opa! 
 
