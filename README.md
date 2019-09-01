@@ -1,4 +1,4 @@
-# Projeto Betina Currency
+<h1 align="center"> Projeto Betina Currency </h1>
 
 Esse projeto tem o objetivo de encontrar a melhor 
 sequência de cambios de uma moeda para outra.
@@ -57,8 +57,8 @@ Ok, no segundo cenário consegui ‎₽16.128,80 Rublos
 Eu fiquei com ₽0,28 centavos de Rublos a mais quando fiz o 
 caminho Real -> Euro -> Rublo
 
-Parece besteira né, mas e se inves de R$1.000 Reais eu 
-tivesse R$1.000.000,00 de reais? Aí eu teria ₽280 a mais...
+Parece besteira né, mas e se fosse R$1.000.000,00 de reais? 
+Aí eu teria ₽280 a mais...
 
 Bem... Continua parecendo besteira.
 
@@ -84,11 +84,11 @@ trocados por R$1.001,65 Reais!!!
 ## Hmm... Não sei não Rick...
 
 Bem... Talvez não seja tão simples assim... Existem taxas 
-de câmbio, se você quiser comprar 1 milhão de euros talvez 
-a casa de câmbio não tenha, e se isso funcionasse eu não 
+de câmbio.. Se você quiser comprar 1 milhão de euros talvez 
+a casa de câmbio não tenha... E se isso funcionasse eu não 
 estaria aqui contando pra você...
 
-Maaaaas o escopo desse projeto será simples sim!!
+Maaaaaaas o escopo desse projeto será simples sim!!
 
 E se eu fiquei Bilionário foi porque eu mereci!!
 
