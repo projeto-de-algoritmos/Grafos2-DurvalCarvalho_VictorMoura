@@ -5,19 +5,16 @@ sequência de cambios de uma moeda para outra.
 
 # Cenário
 
-Imagine o seguinte cenário. Você tem 1 Real e quer converter para 1 Rublo.
+Imagine o seguinte cenário. Você tem R$1.000 Reais e quer converter Rublos.
 Porém essa conversão não é comum em casas de câmbio, e a maioria delas 
 somente trocam real para dolar ou euro.
 
-Você conhece uma outra casa de câmbio realiza câmbio para Rublos, porém eles 
-somente aceitam dolar ou euro.
+Você conhece uma outra casa de câmbio que tem Rublos para trocar, porém ela 
+só aceita dolar e euro.
 
-Para conseguir o câmbio necessário será preciso escolher se você irá comprar 
-Dolar ou comprar Euro, para assim, na outra casa de câmbio, conseguir fazer 
-o câmbio para rublos.
-
-Será que tanto faz comprar Euro ou comprar Dolar? Será que o montante em 
-Rublos ao final será o mesmo.
+Bem, eu posso primeiro comprar dolar/euro e depois trocar para rublos. Mas 
+será que tanto faz o caminho real->euro->rublo ou real->dolar->rublo? 
+Será que o montante final é o mesmo?
 
 # Simulação
 
