@@ -116,3 +116,9 @@ Esse algoritmo computa a distância mínima entre todos os
 pares de vértices conectados em uma execução com a 
 complexidade O(V³) e retorna as queries em O(1).
 
+# APIS de câmbio de moedas
+- https://fixer.io/ (Somente EUR -> Outras Moedas)
+- https://exchangeratesapi.io/
+- https://currencylayer.com/ (Somente USD -> Outras Moedas)
+- https://docs.openexchangerates.org/ (Somente USD -> Outras Moedas)
+- https://www.currencyconverterapi.com/
