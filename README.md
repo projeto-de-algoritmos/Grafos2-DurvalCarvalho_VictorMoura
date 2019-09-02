@@ -50,7 +50,7 @@ E então fazemos o câmbio de €219,40 Euros para ₽16.129,08 Rublos
 </p>
 
 #### **Resultado** 
-Ok, no segundo cenário consegui ‎₽16.128,80 Rublos
+Ok, no segundo cenário consegui ₽16.129,08 Rublos
 
 ## Opa! 
 
