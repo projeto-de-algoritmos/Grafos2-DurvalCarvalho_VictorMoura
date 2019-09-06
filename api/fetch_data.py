@@ -1,6 +1,4 @@
-from fixerio import FixerIO
-from currencylayer import CurrencyLayer
-from exchangeratesapi import ExchangeRatesAPI
+from exchange_locales import FixerIO, CurrencyLayer, ExchangeRatesAPI
 
 if __name__ == '__main__':
     exchange_locales = [FixerIO(), CurrencyLayer(), ExchangeRatesAPI()]
