@@ -48,12 +48,15 @@ if __name__ == '__main__':
         with open('pickles/floyd_warshall_predecessor.pickle', 'wb') as pkl:
             pickle.dump(predecessors, pkl)
 
-    lst = nx.reconstruct_path('BRL', 'USD', predecessors)
-    print(lst)
+    for a,b,c in data:
+        print(a,b,c)
 
-    money = 1000
+    # lst = nx.reconstruct_path('BRL', 'USD', predecessors)
+    # print(lst)
 
-    for i in range(len(lst)-1):
-        tpl = (lst[i], lst[i+1])
-        money = convert[tpl] * money
-        print(money)
+    # money = 1000
+
+    # for i in range(len(lst)-1):
+    #     tpl = (lst[i], lst[i+1])
+    #     money = convert[tpl] * money
+    #     print(money)
