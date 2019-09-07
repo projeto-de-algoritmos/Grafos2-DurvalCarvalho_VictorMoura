@@ -2,20 +2,26 @@ import requests
 import pickle
 
 class BaseLocale(object):
-    def __init__(self, name='', slug='', base_url='', from_file=True):        
+    def __init__(self, name='', slug='', base_url='', force_update=False):        
         self.base_url = base_url
         self.name = name
         self.slug = slug
-        
-        try:
-            if from_file:
-                self.from_pickle()
-        except FileNotFoundError:
-            from_file = False
+        self.apiKey = ''
 
-        if not from_file:
-            self.edges = [] # Edges list: [(from, to, weight), ...]
-            self.to_pickle()
+        if force_update:
+            self.get_updates()
+        
+        else:
+            try:
+                self.from_pickle()
+        
+            except FileNotFoundError:
+                self.get_updates()
+    
+    def get_updates(self):
+        self.edges = []         # Edges list: [(from, to, weight), ...]
+        self.fill_edges_list()
+        self.to_pickle()
 
     def __repr__(self):
         return "(Exchange Locale: {0})".format(self.name)
@@ -25,9 +31,6 @@ class BaseLocale(object):
 
     def to_json(self, response):
         return response.json()
-
-    def fill_edges_list(self):
-        pass
 
     def to_pickle(self):
         with open('pickles/{0}.pickle'.format(self.name), 'wb') as pickle_file:

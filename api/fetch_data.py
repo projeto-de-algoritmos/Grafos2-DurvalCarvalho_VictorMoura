@@ -1,11 +1,21 @@
 from exchange_locales import (
-    FixerIO, CurrencyLayer, 
-    ExchangeRatesAPI, OpenExchange
+    FixerIO, 
+    CurrencyLayer, 
+    ExchangeRatesAPI, 
+    OpenExchange,
+    CurrencyConverter
 )
 
 if __name__ == '__main__':
-    exchange_locales = [FixerIO(), CurrencyLayer(), ExchangeRatesAPI()]
     
-    for locale in exchange_locales:
-        locale.fill_edges_list()
-        locale.to_pickle()
+    FixerIO()
+    print('25%')
+
+    CurrencyLayer()
+    print('50%')
+    
+    ExchangeRatesAPI()
+    print('75%')
+
+    CurrencyConverter()
+    print('100%')
