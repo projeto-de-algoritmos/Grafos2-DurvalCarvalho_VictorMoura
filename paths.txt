@@ -1,0 +1,1641 @@
+dist[EUR_FI][EUR_FI] = inf
+EUR_FI
+
+dist[AED_FI][AED_FI] = 1
+AED_FI
+
+dist[AFN_FI][AFN_FI] = 1
+AFN_FI
+
+dist[ALL_FI][ALL_FI] = 1
+ALL_FI
+
+dist[AMD_FI][AMD_FI] = 1
+AMD_FI
+
+dist[ANG_FI][ANG_FI] = 1
+ANG_FI
+
+dist[AOA_FI][AOA_FI] = 1
+AOA_FI
+
+dist[ARS_FI][ARS_FI] = 1
+ARS_FI
+
+dist[AUD_FI][AUD_FI] = inf
+AUD_FI
+
+dist[AWG_FI][AWG_FI] = 1
+AWG_FI
+
+dist[AZN_FI][AZN_FI] = 1
+AZN_FI
+
+dist[BAM_FI][BAM_FI] = 1
+BAM_FI
+
+dist[BBD_FI][BBD_FI] = 1
+BBD_FI
+
+dist[BDT_FI][BDT_FI] = 1
+BDT_FI
+
+dist[BGN_FI][BGN_FI] = inf
+BGN_FI
+
+dist[BHD_FI][BHD_FI] = 1
+BHD_FI
+
+dist[BIF_FI][BIF_FI] = 1
+BIF_FI
+
+dist[BMD_FI][BMD_FI] = 1
+BMD_FI
+
+dist[BND_FI][BND_FI] = 1
+BND_FI
+
+dist[BOB_FI][BOB_FI] = 1
+BOB_FI
+
+dist[BRL_FI][BRL_FI] = inf
+BRL_FI
+
+dist[BSD_FI][BSD_FI] = 1
+BSD_FI
+
+dist[BTC_FI][BTC_FI] = 1
+BTC_FI
+
+dist[BTN_FI][BTN_FI] = 1
+BTN_FI
+
+dist[BWP_FI][BWP_FI] = 1
+BWP_FI
+
+dist[BYN_FI][BYN_FI] = 1
+BYN_FI
+
+dist[BYR_FI][BYR_FI] = 1
+BYR_FI
+
+dist[BZD_FI][BZD_FI] = 1
+BZD_FI
+
+dist[CAD_FI][CAD_FI] = inf
+CAD_FI
+
+dist[CDF_FI][CDF_FI] = 1
+CDF_FI
+
+dist[CHF_FI][CHF_FI] = inf
+CHF_FI
+
+dist[CLF_FI][CLF_FI] = 1
+CLF_FI
+
+dist[CLP_FI][CLP_FI] = 1
+CLP_FI
+
+dist[CNY_FI][CNY_FI] = inf
+CNY_FI
+
+dist[COP_FI][COP_FI] = 1
+COP_FI
+
+dist[CRC_FI][CRC_FI] = 1
+CRC_FI
+
+dist[CUC_FI][CUC_FI] = 1
+CUC_FI
+
+dist[CUP_FI][CUP_FI] = 1
+CUP_FI
+
+dist[CVE_FI][CVE_FI] = 1
+CVE_FI
+
+dist[CZK_FI][CZK_FI] = inf
+CZK_FI
+
+dist[DJF_FI][DJF_FI] = 1
+DJF_FI
+
+dist[DKK_FI][DKK_FI] = inf
+DKK_FI
+
+dist[DOP_FI][DOP_FI] = 1
+DOP_FI
+
+dist[DZD_FI][DZD_FI] = 1
+DZD_FI
+
+dist[EGP_FI][EGP_FI] = 1
+EGP_FI
+
+dist[ERN_FI][ERN_FI] = 1
+ERN_FI
+
+dist[ETB_FI][ETB_FI] = 1
+ETB_FI
+
+dist[FJD_FI][FJD_FI] = 1
+FJD_FI
+
+dist[FKP_FI][FKP_FI] = 1
+FKP_FI
+
+dist[GBP_FI][GBP_FI] = inf
+GBP_FI
+
+dist[GEL_FI][GEL_FI] = 1
+GEL_FI
+
+dist[GGP_FI][GGP_FI] = 1
+GGP_FI
+
+dist[GHS_FI][GHS_FI] = 1
+GHS_FI
+
+dist[GIP_FI][GIP_FI] = 1
+GIP_FI
+
+dist[GMD_FI][GMD_FI] = 1
+GMD_FI
+
+dist[GNF_FI][GNF_FI] = 1
+GNF_FI
+
+dist[GTQ_FI][GTQ_FI] = 1
+GTQ_FI
+
+dist[GYD_FI][GYD_FI] = 1
+GYD_FI
+
+dist[HKD_FI][HKD_FI] = inf
+HKD_FI
+
+dist[HNL_FI][HNL_FI] = 1
+HNL_FI
+
+dist[HRK_FI][HRK_FI] = inf
+HRK_FI
+
+dist[HTG_FI][HTG_FI] = 1
+HTG_FI
+
+dist[HUF_FI][HUF_FI] = inf
+HUF_FI
+
+dist[IDR_FI][IDR_FI] = inf
+IDR_FI
+
+dist[ILS_FI][ILS_FI] = inf
+ILS_FI
+
+dist[IMP_FI][IMP_FI] = 1
+IMP_FI
+
+dist[INR_FI][INR_FI] = inf
+INR_FI
+
+dist[IQD_FI][IQD_FI] = 1
+IQD_FI
+
+dist[IRR_FI][IRR_FI] = 1
+IRR_FI
+
+dist[ISK_FI][ISK_FI] = inf
+ISK_FI
+
+dist[JEP_FI][JEP_FI] = 1
+JEP_FI
+
+dist[JMD_FI][JMD_FI] = 1
+JMD_FI
+
+dist[JOD_FI][JOD_FI] = 1
+JOD_FI
+
+dist[JPY_FI][JPY_FI] = inf
+JPY_FI
+
+dist[KES_FI][KES_FI] = 1
+KES_FI
+
+dist[KGS_FI][KGS_FI] = 1
+KGS_FI
+
+dist[KHR_FI][KHR_FI] = 1
+KHR_FI
+
+dist[KMF_FI][KMF_FI] = 1
+KMF_FI
+
+dist[KPW_FI][KPW_FI] = 1
+KPW_FI
+
+dist[KRW_FI][KRW_FI] = inf
+KRW_FI
+
+dist[KWD_FI][KWD_FI] = 1
+KWD_FI
+
+dist[KYD_FI][KYD_FI] = 1
+KYD_FI
+
+dist[KZT_FI][KZT_FI] = 1
+KZT_FI
+
+dist[LAK_FI][LAK_FI] = 1
+LAK_FI
+
+dist[LBP_FI][LBP_FI] = 1
+LBP_FI
+
+dist[LKR_FI][LKR_FI] = 1
+LKR_FI
+
+dist[LRD_FI][LRD_FI] = 1
+LRD_FI
+
+dist[LSL_FI][LSL_FI] = 1
+LSL_FI
+
+dist[LTL_FI][LTL_FI] = 1
+LTL_FI
+
+dist[LVL_FI][LVL_FI] = 1
+LVL_FI
+
+dist[LYD_FI][LYD_FI] = 1
+LYD_FI
+
+dist[MAD_FI][MAD_FI] = 1
+MAD_FI
+
+dist[MDL_FI][MDL_FI] = 1
+MDL_FI
+
+dist[MGA_FI][MGA_FI] = 1
+MGA_FI
+
+dist[MKD_FI][MKD_FI] = 1
+MKD_FI
+
+dist[MMK_FI][MMK_FI] = 1
+MMK_FI
+
+dist[MNT_FI][MNT_FI] = 1
+MNT_FI
+
+dist[MOP_FI][MOP_FI] = 1
+MOP_FI
+
+dist[MRO_FI][MRO_FI] = 1
+MRO_FI
+
+dist[MUR_FI][MUR_FI] = 1
+MUR_FI
+
+dist[MVR_FI][MVR_FI] = 1
+MVR_FI
+
+dist[MWK_FI][MWK_FI] = 1
+MWK_FI
+
+dist[MXN_FI][MXN_FI] = inf
+MXN_FI
+
+dist[MYR_FI][MYR_FI] = inf
+MYR_FI
+
+dist[MZN_FI][MZN_FI] = 1
+MZN_FI
+
+dist[NAD_FI][NAD_FI] = 1
+NAD_FI
+
+dist[NGN_FI][NGN_FI] = 1
+NGN_FI
+
+dist[NIO_FI][NIO_FI] = 1
+NIO_FI
+
+dist[NOK_FI][NOK_FI] = inf
+NOK_FI
+
+dist[NPR_FI][NPR_FI] = 1
+NPR_FI
+
+dist[NZD_FI][NZD_FI] = inf
+NZD_FI
+
+dist[OMR_FI][OMR_FI] = 1
+OMR_FI
+
+dist[PAB_FI][PAB_FI] = 1
+PAB_FI
+
+dist[PEN_FI][PEN_FI] = 1
+PEN_FI
+
+dist[PGK_FI][PGK_FI] = 1
+PGK_FI
+
+dist[PHP_FI][PHP_FI] = inf
+PHP_FI
+
+dist[PKR_FI][PKR_FI] = 1
+PKR_FI
+
+dist[PLN_FI][PLN_FI] = inf
+PLN_FI
+
+dist[PYG_FI][PYG_FI] = 1
+PYG_FI
+
+dist[QAR_FI][QAR_FI] = 1
+QAR_FI
+
+dist[RON_FI][RON_FI] = inf
+RON_FI
+
+dist[RSD_FI][RSD_FI] = 1
+RSD_FI
+
+dist[RUB_FI][RUB_FI] = inf
+RUB_FI
+
+dist[RWF_FI][RWF_FI] = 1
+RWF_FI
+
+dist[SAR_FI][SAR_FI] = 1
+SAR_FI
+
+dist[SBD_FI][SBD_FI] = 1
+SBD_FI
+
+dist[SCR_FI][SCR_FI] = 1
+SCR_FI
+
+dist[SDG_FI][SDG_FI] = 1
+SDG_FI
+
+dist[SEK_FI][SEK_FI] = inf
+SEK_FI
+
+dist[SGD_FI][SGD_FI] = inf
+SGD_FI
+
+dist[SHP_FI][SHP_FI] = 1
+SHP_FI
+
+dist[SLL_FI][SLL_FI] = 1
+SLL_FI
+
+dist[SOS_FI][SOS_FI] = 1
+SOS_FI
+
+dist[SRD_FI][SRD_FI] = 1
+SRD_FI
+
+dist[STD_FI][STD_FI] = 1
+STD_FI
+
+dist[SVC_FI][SVC_FI] = 1
+SVC_FI
+
+dist[SYP_FI][SYP_FI] = 1
+SYP_FI
+
+dist[SZL_FI][SZL_FI] = 1
+SZL_FI
+
+dist[THB_FI][THB_FI] = inf
+THB_FI
+
+dist[TJS_FI][TJS_FI] = 1
+TJS_FI
+
+dist[TMT_FI][TMT_FI] = 1
+TMT_FI
+
+dist[TND_FI][TND_FI] = 1
+TND_FI
+
+dist[TOP_FI][TOP_FI] = 1
+TOP_FI
+
+dist[TRY_FI][TRY_FI] = inf
+TRY_FI
+
+dist[TTD_FI][TTD_FI] = 1
+TTD_FI
+
+dist[TWD_FI][TWD_FI] = 1
+TWD_FI
+
+dist[TZS_FI][TZS_FI] = 1
+TZS_FI
+
+dist[UAH_FI][UAH_FI] = 1
+UAH_FI
+
+dist[UGX_FI][UGX_FI] = 1
+UGX_FI
+
+dist[USD_FI][USD_FI] = inf
+USD_FI
+
+dist[UYU_FI][UYU_FI] = 1
+UYU_FI
+
+dist[UZS_FI][UZS_FI] = 1
+UZS_FI
+
+dist[VEF_FI][VEF_FI] = 1
+VEF_FI
+
+dist[VND_FI][VND_FI] = 1
+VND_FI
+
+dist[VUV_FI][VUV_FI] = 1
+VUV_FI
+
+dist[WST_FI][WST_FI] = 1
+WST_FI
+
+dist[XAF_FI][XAF_FI] = 1
+XAF_FI
+
+dist[XAG_FI][XAG_FI] = 1
+XAG_FI
+
+dist[XAU_FI][XAU_FI] = 1
+XAU_FI
+
+dist[XCD_FI][XCD_FI] = 1
+XCD_FI
+
+dist[XDR_FI][XDR_FI] = 1
+XDR_FI
+
+dist[XOF_FI][XOF_FI] = 1
+XOF_FI
+
+dist[XPF_FI][XPF_FI] = 1
+XPF_FI
+
+dist[YER_FI][YER_FI] = 1
+YER_FI
+
+dist[ZAR_FI][ZAR_FI] = inf
+ZAR_FI
+
+dist[ZMK_FI][ZMK_FI] = 1
+ZMK_FI
+
+dist[ZMW_FI][ZMW_FI] = 1
+ZMW_FI
+
+dist[ZWL_FI][ZWL_FI] = 1
+ZWL_FI
+
+dist[USD_CL][USD_CL] = inf
+USD_CL
+
+dist[AED_CL][AED_CL] = 1
+AED_CL
+
+dist[AFN_CL][AFN_CL] = 1
+AFN_CL
+
+dist[ALL_CL][ALL_CL] = 1
+ALL_CL
+
+dist[AMD_CL][AMD_CL] = 1
+AMD_CL
+
+dist[ANG_CL][ANG_CL] = 1
+ANG_CL
+
+dist[AOA_CL][AOA_CL] = 1
+AOA_CL
+
+dist[ARS_CL][ARS_CL] = 1
+ARS_CL
+
+dist[AUD_CL][AUD_CL] = inf
+AUD_CL
+
+dist[AWG_CL][AWG_CL] = 1
+AWG_CL
+
+dist[AZN_CL][AZN_CL] = 1
+AZN_CL
+
+dist[BAM_CL][BAM_CL] = 1
+BAM_CL
+
+dist[BBD_CL][BBD_CL] = 1
+BBD_CL
+
+dist[BDT_CL][BDT_CL] = 1
+BDT_CL
+
+dist[BGN_CL][BGN_CL] = inf
+BGN_CL
+
+dist[BHD_CL][BHD_CL] = 1
+BHD_CL
+
+dist[BIF_CL][BIF_CL] = 1
+BIF_CL
+
+dist[BMD_CL][BMD_CL] = 1
+BMD_CL
+
+dist[BND_CL][BND_CL] = 1
+BND_CL
+
+dist[BOB_CL][BOB_CL] = 1
+BOB_CL
+
+dist[BRL_CL][BRL_CL] = inf
+BRL_CL
+
+dist[BSD_CL][BSD_CL] = 1
+BSD_CL
+
+dist[BTC_CL][BTC_CL] = 1
+BTC_CL
+
+dist[BTN_CL][BTN_CL] = 1
+BTN_CL
+
+dist[BWP_CL][BWP_CL] = 1
+BWP_CL
+
+dist[BYN_CL][BYN_CL] = 1
+BYN_CL
+
+dist[BYR_CL][BYR_CL] = 1
+BYR_CL
+
+dist[BZD_CL][BZD_CL] = 1
+BZD_CL
+
+dist[CAD_CL][CAD_CL] = inf
+CAD_CL
+
+dist[CDF_CL][CDF_CL] = 1
+CDF_CL
+
+dist[CHF_CL][CHF_CL] = inf
+CHF_CL
+
+dist[CLF_CL][CLF_CL] = 1
+CLF_CL
+
+dist[CLP_CL][CLP_CL] = 1
+CLP_CL
+
+dist[CNY_CL][CNY_CL] = inf
+CNY_CL
+
+dist[COP_CL][COP_CL] = 1
+COP_CL
+
+dist[CRC_CL][CRC_CL] = 1
+CRC_CL
+
+dist[CUC_CL][CUC_CL] = 1
+CUC_CL
+
+dist[CUP_CL][CUP_CL] = 1
+CUP_CL
+
+dist[CVE_CL][CVE_CL] = 1
+CVE_CL
+
+dist[CZK_CL][CZK_CL] = inf
+CZK_CL
+
+dist[DJF_CL][DJF_CL] = 1
+DJF_CL
+
+dist[DKK_CL][DKK_CL] = inf
+DKK_CL
+
+dist[DOP_CL][DOP_CL] = 1
+DOP_CL
+
+dist[DZD_CL][DZD_CL] = 1
+DZD_CL
+
+dist[EGP_CL][EGP_CL] = 1
+EGP_CL
+
+dist[ERN_CL][ERN_CL] = 1
+ERN_CL
+
+dist[ETB_CL][ETB_CL] = 1
+ETB_CL
+
+dist[EUR_CL][EUR_CL] = inf
+EUR_CL
+
+dist[FJD_CL][FJD_CL] = 1
+FJD_CL
+
+dist[FKP_CL][FKP_CL] = 1
+FKP_CL
+
+dist[GBP_CL][GBP_CL] = inf
+GBP_CL
+
+dist[GEL_CL][GEL_CL] = 1
+GEL_CL
+
+dist[GGP_CL][GGP_CL] = 1
+GGP_CL
+
+dist[GHS_CL][GHS_CL] = 1
+GHS_CL
+
+dist[GIP_CL][GIP_CL] = 1
+GIP_CL
+
+dist[GMD_CL][GMD_CL] = 1
+GMD_CL
+
+dist[GNF_CL][GNF_CL] = 1
+GNF_CL
+
+dist[GTQ_CL][GTQ_CL] = 1
+GTQ_CL
+
+dist[GYD_CL][GYD_CL] = 1
+GYD_CL
+
+dist[HKD_CL][HKD_CL] = inf
+HKD_CL
+
+dist[HNL_CL][HNL_CL] = 1
+HNL_CL
+
+dist[HRK_CL][HRK_CL] = inf
+HRK_CL
+
+dist[HTG_CL][HTG_CL] = 1
+HTG_CL
+
+dist[HUF_CL][HUF_CL] = inf
+HUF_CL
+
+dist[IDR_CL][IDR_CL] = inf
+IDR_CL
+
+dist[ILS_CL][ILS_CL] = inf
+ILS_CL
+
+dist[IMP_CL][IMP_CL] = 1
+IMP_CL
+
+dist[INR_CL][INR_CL] = inf
+INR_CL
+
+dist[IQD_CL][IQD_CL] = 1
+IQD_CL
+
+dist[IRR_CL][IRR_CL] = 1
+IRR_CL
+
+dist[ISK_CL][ISK_CL] = inf
+ISK_CL
+
+dist[JEP_CL][JEP_CL] = 1
+JEP_CL
+
+dist[JMD_CL][JMD_CL] = 1
+JMD_CL
+
+dist[JOD_CL][JOD_CL] = 1
+JOD_CL
+
+dist[JPY_CL][JPY_CL] = inf
+JPY_CL
+
+dist[KES_CL][KES_CL] = 1
+KES_CL
+
+dist[KGS_CL][KGS_CL] = 1
+KGS_CL
+
+dist[KHR_CL][KHR_CL] = 1
+KHR_CL
+
+dist[KMF_CL][KMF_CL] = 1
+KMF_CL
+
+dist[KPW_CL][KPW_CL] = 1
+KPW_CL
+
+dist[KRW_CL][KRW_CL] = inf
+KRW_CL
+
+dist[KWD_CL][KWD_CL] = 1
+KWD_CL
+
+dist[KYD_CL][KYD_CL] = 1
+KYD_CL
+
+dist[KZT_CL][KZT_CL] = 1
+KZT_CL
+
+dist[LAK_CL][LAK_CL] = 1
+LAK_CL
+
+dist[LBP_CL][LBP_CL] = 1
+LBP_CL
+
+dist[LKR_CL][LKR_CL] = 1
+LKR_CL
+
+dist[LRD_CL][LRD_CL] = 1
+LRD_CL
+
+dist[LSL_CL][LSL_CL] = 1
+LSL_CL
+
+dist[LTL_CL][LTL_CL] = 1
+LTL_CL
+
+dist[LVL_CL][LVL_CL] = 1
+LVL_CL
+
+dist[LYD_CL][LYD_CL] = 1
+LYD_CL
+
+dist[MAD_CL][MAD_CL] = 1
+MAD_CL
+
+dist[MDL_CL][MDL_CL] = 1
+MDL_CL
+
+dist[MGA_CL][MGA_CL] = 1
+MGA_CL
+
+dist[MKD_CL][MKD_CL] = 1
+MKD_CL
+
+dist[MMK_CL][MMK_CL] = 1
+MMK_CL
+
+dist[MNT_CL][MNT_CL] = 1
+MNT_CL
+
+dist[MOP_CL][MOP_CL] = 1
+MOP_CL
+
+dist[MRO_CL][MRO_CL] = 1
+MRO_CL
+
+dist[MUR_CL][MUR_CL] = 1
+MUR_CL
+
+dist[MVR_CL][MVR_CL] = 1
+MVR_CL
+
+dist[MWK_CL][MWK_CL] = 1
+MWK_CL
+
+dist[MXN_CL][MXN_CL] = inf
+MXN_CL
+
+dist[MYR_CL][MYR_CL] = inf
+MYR_CL
+
+dist[MZN_CL][MZN_CL] = 1
+MZN_CL
+
+dist[NAD_CL][NAD_CL] = 1
+NAD_CL
+
+dist[NGN_CL][NGN_CL] = 1
+NGN_CL
+
+dist[NIO_CL][NIO_CL] = 1
+NIO_CL
+
+dist[NOK_CL][NOK_CL] = inf
+NOK_CL
+
+dist[NPR_CL][NPR_CL] = 1
+NPR_CL
+
+dist[NZD_CL][NZD_CL] = inf
+NZD_CL
+
+dist[OMR_CL][OMR_CL] = 1
+OMR_CL
+
+dist[PAB_CL][PAB_CL] = 1
+PAB_CL
+
+dist[PEN_CL][PEN_CL] = 1
+PEN_CL
+
+dist[PGK_CL][PGK_CL] = 1
+PGK_CL
+
+dist[PHP_CL][PHP_CL] = inf
+PHP_CL
+
+dist[PKR_CL][PKR_CL] = 1
+PKR_CL
+
+dist[PLN_CL][PLN_CL] = inf
+PLN_CL
+
+dist[PYG_CL][PYG_CL] = 1
+PYG_CL
+
+dist[QAR_CL][QAR_CL] = 1
+QAR_CL
+
+dist[RON_CL][RON_CL] = inf
+RON_CL
+
+dist[RSD_CL][RSD_CL] = 1
+RSD_CL
+
+dist[RUB_CL][RUB_CL] = inf
+RUB_CL
+
+dist[RWF_CL][RWF_CL] = 1
+RWF_CL
+
+dist[SAR_CL][SAR_CL] = 1
+SAR_CL
+
+dist[SBD_CL][SBD_CL] = 1
+SBD_CL
+
+dist[SCR_CL][SCR_CL] = 1
+SCR_CL
+
+dist[SDG_CL][SDG_CL] = 1
+SDG_CL
+
+dist[SEK_CL][SEK_CL] = inf
+SEK_CL
+
+dist[SGD_CL][SGD_CL] = inf
+SGD_CL
+
+dist[SHP_CL][SHP_CL] = 1
+SHP_CL
+
+dist[SLL_CL][SLL_CL] = 1
+SLL_CL
+
+dist[SOS_CL][SOS_CL] = 1
+SOS_CL
+
+dist[SRD_CL][SRD_CL] = 1
+SRD_CL
+
+dist[STD_CL][STD_CL] = 1
+STD_CL
+
+dist[SVC_CL][SVC_CL] = 1
+SVC_CL
+
+dist[SYP_CL][SYP_CL] = 1
+SYP_CL
+
+dist[SZL_CL][SZL_CL] = 1
+SZL_CL
+
+dist[THB_CL][THB_CL] = inf
+THB_CL
+
+dist[TJS_CL][TJS_CL] = 1
+TJS_CL
+
+dist[TMT_CL][TMT_CL] = 1
+TMT_CL
+
+dist[TND_CL][TND_CL] = 1
+TND_CL
+
+dist[TOP_CL][TOP_CL] = 1
+TOP_CL
+
+dist[TRY_CL][TRY_CL] = inf
+TRY_CL
+
+dist[TTD_CL][TTD_CL] = 1
+TTD_CL
+
+dist[TWD_CL][TWD_CL] = 1
+TWD_CL
+
+dist[TZS_CL][TZS_CL] = 1
+TZS_CL
+
+dist[UAH_CL][UAH_CL] = 1
+UAH_CL
+
+dist[UGX_CL][UGX_CL] = 1
+UGX_CL
+
+dist[UYU_CL][UYU_CL] = 1
+UYU_CL
+
+dist[UZS_CL][UZS_CL] = 1
+UZS_CL
+
+dist[VEF_CL][VEF_CL] = 1
+VEF_CL
+
+dist[VND_CL][VND_CL] = 1
+VND_CL
+
+dist[VUV_CL][VUV_CL] = 1
+VUV_CL
+
+dist[WST_CL][WST_CL] = 1
+WST_CL
+
+dist[XAF_CL][XAF_CL] = 1
+XAF_CL
+
+dist[XAG_CL][XAG_CL] = 1
+XAG_CL
+
+dist[XAU_CL][XAU_CL] = 1
+XAU_CL
+
+dist[XCD_CL][XCD_CL] = 1
+XCD_CL
+
+dist[XDR_CL][XDR_CL] = 1
+XDR_CL
+
+dist[XOF_CL][XOF_CL] = 1
+XOF_CL
+
+dist[XPF_CL][XPF_CL] = 1
+XPF_CL
+
+dist[YER_CL][YER_CL] = 1
+YER_CL
+
+dist[ZAR_CL][ZAR_CL] = inf
+ZAR_CL
+
+dist[ZMK_CL][ZMK_CL] = 1
+ZMK_CL
+
+dist[ZMW_CL][ZMW_CL] = 1
+ZMW_CL
+
+dist[ZWL_CL][ZWL_CL] = 1
+ZWL_CL
+
+dist[EUR_ER][EUR_ER] = inf
+EUR_ER
+
+dist[CAD_ER][CAD_ER] = inf
+CAD_ER
+
+dist[HKD_ER][HKD_ER] = inf
+HKD_ER
+
+dist[ISK_ER][ISK_ER] = inf
+ISK_ER
+
+dist[PHP_ER][PHP_ER] = inf
+PHP_ER
+
+dist[DKK_ER][DKK_ER] = inf
+DKK_ER
+
+dist[HUF_ER][HUF_ER] = inf
+HUF_ER
+
+dist[CZK_ER][CZK_ER] = inf
+CZK_ER
+
+dist[AUD_ER][AUD_ER] = inf
+AUD_ER
+
+dist[RON_ER][RON_ER] = inf
+RON_ER
+
+dist[SEK_ER][SEK_ER] = inf
+SEK_ER
+
+dist[IDR_ER][IDR_ER] = inf
+IDR_ER
+
+dist[INR_ER][INR_ER] = inf
+INR_ER
+
+dist[BRL_ER][BRL_ER] = inf
+BRL_ER
+
+dist[RUB_ER][RUB_ER] = inf
+RUB_ER
+
+dist[HRK_ER][HRK_ER] = inf
+HRK_ER
+
+dist[JPY_ER][JPY_ER] = inf
+JPY_ER
+
+dist[THB_ER][THB_ER] = inf
+THB_ER
+
+dist[CHF_ER][CHF_ER] = inf
+CHF_ER
+
+dist[SGD_ER][SGD_ER] = inf
+SGD_ER
+
+dist[PLN_ER][PLN_ER] = inf
+PLN_ER
+
+dist[BGN_ER][BGN_ER] = inf
+BGN_ER
+
+dist[TRY_ER][TRY_ER] = inf
+TRY_ER
+
+dist[CNY_ER][CNY_ER] = inf
+CNY_ER
+
+dist[NOK_ER][NOK_ER] = inf
+NOK_ER
+
+dist[NZD_ER][NZD_ER] = inf
+NZD_ER
+
+dist[ZAR_ER][ZAR_ER] = inf
+ZAR_ER
+
+dist[USD_ER][USD_ER] = inf
+USD_ER
+
+dist[MXN_ER][MXN_ER] = inf
+MXN_ER
+
+dist[ILS_ER][ILS_ER] = inf
+ILS_ER
+
+dist[GBP_ER][GBP_ER] = inf
+GBP_ER
+
+dist[KRW_ER][KRW_ER] = inf
+KRW_ER
+
+dist[MYR_ER][MYR_ER] = inf
+MYR_ER
+
+dist[USD_CC][USD_CC] = inf
+USD_CC
+
+dist[EUR_CC][EUR_CC] = inf
+EUR_CC
+
+dist[GBP_CC][GBP_CC] = inf
+GBP_CC
+
+dist[INR_CC][INR_CC] = inf
+INR_CC
+
+dist[BRL_CC][BRL_CC] = inf
+BRL_CC
+
+dist[RUB_CC][RUB_CC] = inf
+RUB_CC
+
+dist[JPY_CC][JPY_CC] = inf
+JPY_CC
+
+dist[MXN_CC][MXN_CC] = inf
+MXN_CC
+
+dist[CNY_CC][CNY_CC] = inf
+CNY_CC
+
+dist[IDR_CC][IDR_CC] = inf
+IDR_CC
+
+dist[KRW][KRW] = inf
+KRW
+
+dist[UAH][UAH] = 1
+UAH
+
+dist[RUB][RUB] = inf
+RUB
+
+dist[BSD][BSD] = 1
+BSD
+
+dist[XAU][XAU] = 1
+XAU
+
+dist[AOA][AOA] = 1
+AOA
+
+dist[SBD][SBD] = 1
+SBD
+
+dist[JMD][JMD] = 1
+JMD
+
+dist[THB][THB] = inf
+THB
+
+dist[ZAR][ZAR] = inf
+ZAR
+
+dist[BHD][BHD] = 1
+BHD
+
+dist[BYR][BYR] = 1
+BYR
+
+dist[SAR][SAR] = 1
+SAR
+
+dist[GMD][GMD] = 1
+GMD
+
+dist[GNF][GNF] = 1
+GNF
+
+dist[BGN][BGN] = inf
+BGN
+
+dist[TJS][TJS] = 1
+TJS
+
+dist[VND][VND] = 1
+VND
+
+dist[FJD][FJD] = 1
+FJD
+
+dist[KMF][KMF] = 1
+KMF
+
+dist[WST][WST] = 1
+WST
+
+dist[UGX][UGX] = 1
+UGX
+
+dist[BIF][BIF] = 1
+BIF
+
+dist[NAD][NAD] = 1
+NAD
+
+dist[BTC][BTC] = 1
+BTC
+
+dist[CRC][CRC] = 1
+CRC
+
+dist[HRK][HRK] = inf
+HRK
+
+dist[KPW][KPW] = 1
+KPW
+
+dist[KGS][KGS] = 1
+KGS
+
+dist[KHR][KHR] = 1
+KHR
+
+dist[NPR][NPR] = 1
+NPR
+
+dist[ZMW][ZMW] = 1
+ZMW
+
+dist[PEN][PEN] = 1
+PEN
+
+dist[ZMK][ZMK] = 1
+ZMK
+
+dist[GGP][GGP] = 1
+GGP
+
+dist[QAR][QAR] = 1
+QAR
+
+dist[HNL][HNL] = 1
+HNL
+
+dist[VUV][VUV] = 1
+VUV
+
+dist[PKR][PKR] = 1
+PKR
+
+dist[BZD][BZD] = 1
+BZD
+
+dist[LKR][LKR] = 1
+LKR
+
+dist[PLN][PLN] = inf
+PLN
+
+dist[CNY][CNY] = inf
+CNY
+
+dist[MXN][MXN] = inf
+MXN
+
+dist[BRL][BRL] = inf
+BRL
+
+dist[PYG][PYG] = 1
+PYG
+
+dist[ETB][ETB] = 1
+ETB
+
+dist[MKD][MKD] = 1
+MKD
+
+dist[LRD][LRD] = 1
+LRD
+
+dist[LAK][LAK] = 1
+LAK
+
+dist[DZD][DZD] = 1
+DZD
+
+dist[MVR][MVR] = 1
+MVR
+
+dist[XOF][XOF] = 1
+XOF
+
+dist[AUD][AUD] = inf
+AUD
+
+dist[EUR][EUR] = inf
+EUR
+
+dist[GYD][GYD] = 1
+GYD
+
+dist[XDR][XDR] = 1
+XDR
+
+dist[MWK][MWK] = 1
+MWK
+
+dist[NZD][NZD] = inf
+NZD
+
+dist[UYU][UYU] = 1
+UYU
+
+dist[BMD][BMD] = 1
+BMD
+
+dist[BOB][BOB] = 1
+BOB
+
+dist[MUR][MUR] = 1
+MUR
+
+dist[INR][INR] = inf
+INR
+
+dist[TTD][TTD] = 1
+TTD
+
+dist[DKK][DKK] = inf
+DKK
+
+dist[IDR][IDR] = inf
+IDR
+
+dist[EGP][EGP] = 1
+EGP
+
+dist[AZN][AZN] = 1
+AZN
+
+dist[GEL][GEL] = 1
+GEL
+
+dist[SVC][SVC] = 1
+SVC
+
+dist[SZL][SZL] = 1
+SZL
+
+dist[SEK][SEK] = inf
+SEK
+
+dist[CZK][CZK] = inf
+CZK
+
+dist[AFN][AFN] = 1
+AFN
+
+dist[FKP][FKP] = 1
+FKP
+
+dist[SCR][SCR] = 1
+SCR
+
+dist[COP][COP] = 1
+COP
+
+dist[LYD][LYD] = 1
+LYD
+
+dist[MGA][MGA] = 1
+MGA
+
+dist[MZN][MZN] = 1
+MZN
+
+dist[AWG][AWG] = 1
+AWG
+
+dist[CLF][CLF] = 1
+CLF
+
+dist[TRY][TRY] = inf
+TRY
+
+dist[TMT][TMT] = 1
+TMT
+
+dist[IRR][IRR] = 1
+IRR
+
+dist[AMD][AMD] = 1
+AMD
+
+dist[BAM][BAM] = 1
+BAM
+
+dist[TZS][TZS] = 1
+TZS
+
+dist[BTN][BTN] = 1
+BTN
+
+dist[MYR][MYR] = inf
+MYR
+
+dist[SOS][SOS] = 1
+SOS
+
+dist[SLL][SLL] = 1
+SLL
+
+dist[LSL][LSL] = 1
+LSL
+
+dist[BBD][BBD] = 1
+BBD
+
+dist[NIO][NIO] = 1
+NIO
+
+dist[ZWL][ZWL] = 1
+ZWL
+
+dist[ANG][ANG] = 1
+ANG
+
+dist[CUP][CUP] = 1
+CUP
+
+dist[KZT][KZT] = 1
+KZT
+
+dist[KWD][KWD] = 1
+KWD
+
+dist[RON][RON] = inf
+RON
+
+dist[ISK][ISK] = inf
+ISK
+
+dist[USD][USD] = inf
+USD
+
+dist[JPY][JPY] = inf
+JPY
+
+dist[AED][AED] = 1
+AED
+
+dist[MAD][MAD] = 1
+MAD
+
+dist[UZS][UZS] = 1
+UZS
+
+dist[CLP][CLP] = 1
+CLP
+
+dist[SYP][SYP] = 1
+SYP
+
+dist[CHF][CHF] = inf
+CHF
+
+dist[RSD][RSD] = 1
+RSD
+
+dist[LBP][LBP] = 1
+LBP
+
+dist[NOK][NOK] = inf
+NOK
+
+dist[JOD][JOD] = 1
+JOD
+
+dist[MNT][MNT] = 1
+MNT
+
+dist[XCD][XCD] = 1
+XCD
+
+dist[HKD][HKD] = inf
+HKD
+
+dist[TOP][TOP] = 1
+TOP
+
+dist[OMR][OMR] = 1
+OMR
+
+dist[TWD][TWD] = 1
+TWD
+
+dist[ARS][ARS] = 1
+ARS
+
+dist[BYN][BYN] = 1
+BYN
+
+dist[XAF][XAF] = 1
+XAF
+
+dist[MOP][MOP] = 1
+MOP
+
+dist[SHP][SHP] = 1
+SHP
+
+dist[ILS][ILS] = inf
+ILS
+
+dist[MDL][MDL] = 1
+MDL
+
+dist[GBP][GBP] = inf
+GBP
+
+dist[LTL][LTL] = 1
+LTL
+
+dist[PGK][PGK] = 1
+PGK
+
+dist[YER][YER] = 1
+YER
+
+dist[SDG][SDG] = 1
+SDG
+
+dist[GTQ][GTQ] = 1
+GTQ
+
+dist[GIP][GIP] = 1
+GIP
+
+dist[CDF][CDF] = 1
+CDF
+
+dist[HUF][HUF] = inf
+HUF
+
+dist[SRD][SRD] = 1
+SRD
+
+dist[STD][STD] = 1
+STD
+
+dist[KES][KES] = 1
+KES
+
+dist[HTG][HTG] = 1
+HTG
+
+dist[SGD][SGD] = inf
+SGD
+
+dist[CVE][CVE] = 1
+CVE
+
+dist[NGN][NGN] = 1
+NGN
+
+dist[CAD][CAD] = inf
+CAD
+
+dist[PHP][PHP] = inf
+PHP
+
+dist[BND][BND] = 1
+BND
+
+dist[CUC][CUC] = 1
+CUC
+
+dist[PAB][PAB] = 1
+PAB
+
+dist[JEP][JEP] = 1
+JEP
+
+dist[GHS][GHS] = 1
+GHS
+
+dist[ERN][ERN] = 1
+ERN
+
+dist[IMP][IMP] = 1
+IMP
+
+dist[BDT][BDT] = 1
+BDT
+
+dist[DJF][DJF] = 1
+DJF
+
+dist[XAG][XAG] = 1
+XAG
+
+dist[MRO][MRO] = 1
+MRO
+
+dist[ALL][ALL] = 1
+ALL
+
+dist[VEF][VEF] = 1
+VEF
+
+dist[DOP][DOP] = 1
+DOP
+
+dist[LVL][LVL] = 1
+LVL
+
+dist[MMK][MMK] = 1
+MMK
+
+dist[RWF][RWF] = 1
+RWF
+
+dist[KYD][KYD] = 1
+KYD
+
+dist[BWP][BWP] = 1
+BWP
+
+dist[IQD][IQD] = 1
+IQD
+
+dist[XPF][XPF] = 1
+XPF
+
+dist[TND][TND] = 1
+TND
+
