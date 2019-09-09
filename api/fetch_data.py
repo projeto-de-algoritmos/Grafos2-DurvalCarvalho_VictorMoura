@@ -40,13 +40,24 @@ def bellman_ford(ref, edges):
     dist[ref] = 0
     pred[ref] = ref
 
+    visited = set()
+
+    edges = sorted(edges)
     for i in range(len(edges)):
         for u,v,w in edges:
-            if dist[v] > dist[u] + w:
+
+            if not v in visited and dist[v] > dist[u] + w:
+                visited.add(v)
                 dist[v] = dist[u] + w
                 pred[v] = u
     
     return dist, pred
+
+def get_converter(edges):
+    converter = {}
+    for u, v, w in edges:
+        converter[(u,v)] = w
+    return converter
 
 
 if __name__ == '__main__':
@@ -54,7 +65,46 @@ if __name__ == '__main__':
     
     edges += add_junction_currency_between_exchange_houses(edges)
 
+    converter = get_converter(edges)
+
+    _from = 'USD'
+    to = 'BRL'
+
+    print(len(edges))
+
+    remove = []
+    for u,v,w in edges:
+        if u[:3] == _from and v[:3] == to or u[:3] == to and v[:3] == _from:
+            remove.append((u,v,w))
+
+    print(remove)
+    
+    edges = [ edge for edge in edges if not edge in remove]
+
+
     # jump cat -> max mult to min sum
     edges = [ (u,v, -log2(w)) for u,v,w in edges ]
 
-    brl_to, pred = bellman_ford('BRL' ,edges)
+    brl_to, pred = bellman_ford(_from ,edges)
+
+    ans = 2**-brl_to[to]
+
+    path = []
+    p = to
+
+    while(p != _from):
+        path.append(p)
+        p = pred[p]
+    
+    path.append(_from)
+
+    path = list(reversed(path))
+
+    total = 1000
+
+    for i in range(len(path) - 1):
+        pair = ( path[i], path[i+1] )
+        total = total * converter[ pair ]
+        print(pair, total)
+
+    print('final: ', total)
