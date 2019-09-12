@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Currency Converter </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Betina Currency Converter</h1>
+    </div>
+
+    <div class="date">
+    </div>
+    
+    <ul class="currencies">
+
+      <li class="undefined start">
+        <button type="button">
+          Selecionar moeda
+        </button>
+      </li>
+
+      <div class="arrow">
+        <img src="arrow.png" alt="">
+      </div>
+
+      <li class="undefined end">
+        <button type="button">
+          Selecionar moeda
+        </button>
+      </li>
+
+      <!-- <li class="currency based-currency" id="USD">
+        <img src="http://www.geonames.org/flags/l/us.gif" class="flag">
+        <div class="info">
+          <p class="input">
+            <span class="currency-symbol">&#36;</span>
+            <input placeholder="0.00">
+          </p>
+          <p class="currency-name"> USD - US Dollar </p>
+          <p class="base-currency-rate"> 1 USD = 1 USD </p>
+        </div>
+        <span class="close"> &times;</span>
+      </li>
+
+      <li class="currency" id="JPY">
+        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
+        <div class="info">
+          <p class="input">
+            <span class="currency-symbol">&#36;</span>
+            <input placeholder="0.00">
+          </p>
+          <p class="currency-name"> JPY - Japanese Yen </p>
+          <p class="base-currency-rate"> 1 USD = 111.04 USD </p>
+        </div>
+        <span class="close"> &times;</span>
+      </li>
+
+      <li class="currency" id="JPY">
+        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
+        <div class="info">
+          <p class="input">
+            <span class="currency-symbol">&#36;</span>
+            <input placeholder="0.00">
+          </p>
+          <p class="currency-name"> JPY - Japanese Yen </p>
+          <p class="base-currency-rate"> 1 USD = 111.04 USD </p>
+        </div>
+        <span class="close"> &times;</span>
+      </li> -->
+
+    </ul>
+
+    <button class="add-currency-btn">
+      <i> < </i>
+      Add Currency 
+    </button>
+
+    <ul class="add-currency-list">
+
+       <li data-currency="USD">
+        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
+        <span> JPY - Japanese Yen </span>
+      </li>
+
+      <li data-currency="NZD">
+        <img src="http://www.geonames.org/flags/l/nz.gif" class="flag">
+        <span> NZD - New Zealand Dollar </span>
+      </li>
+
+      <li data-currency="CAD">
+        <img src="http://www.geonames.org/flags/l/ca.gif" class="flag">
+        <span> CAD - Canadian Dollar </span>
+      </li>
+
+      <li data-currency="MXN">
+        <img src="http://www.geonames.org/flags/l/mx.gif" class="flag">
+        <span> MXN - Mexican Peso </span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
