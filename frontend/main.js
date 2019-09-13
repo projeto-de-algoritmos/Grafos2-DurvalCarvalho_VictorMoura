@@ -10,17 +10,32 @@ function todayis() {
 todayis();
 
 // ============================================================ //
-function get_data() {
-  request('GET', 'http://localhost:5000/').done(function (res) {
-    console.log(res.getBody());
-  });
+
+async function get_data(f, t, i) {
+  let response = await fetch(`http://localhost:5000?f=${f}&t=${t}&i=${i}`);
+  let data = await response.json()
+  return data;
 }
-get_data();
 
+function show_result(data, initial){
+  ee = document.querySelector('.end.currency .info .input input')
+  final_value = data.conversion_factor * initial
+  ee.value = final_value.toFixed(2)
+  
+  add_new_currency("JPY")
+}
 
+async function get_path_btn(event){
+  var s = document.getElementsByClassName("start currency");
+  var e = document.getElementsByClassName("end currency");
 
+  ss = document.querySelector('.start.currency .info .input input')
 
+  i = ss.value
 
+  get_data(s[0].id, e[0].id, i)
+  .then(data => show_result(data, i)); 
+}
 
 
 

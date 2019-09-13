@@ -8,7 +8,6 @@
   <title> Currency Converter </title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/then-request/2.2.0/request.js"></script>
 </head>
 
 <body>
@@ -80,14 +79,14 @@
 
     </ul>
 
-    <button class="add-currency-btn">
+    <button onclick="get_path_btn()" class="add-currency-btn" >
       <i> < </i>
-      Add Currency 
+      Get Path 
     </button>
 
     <ul class="add-currency-list">
 
-       <li data-currency="USD">
+       <li data-currency="JPY">
         <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
         <span> JPY - Japanese Yen </span>
       </li>
