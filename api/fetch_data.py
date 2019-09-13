@@ -70,7 +70,10 @@ def bellman_ford(ref, edges):
     
     return dist, pred
 
+# function to get the conversion rate between 2 currencies
+def get_converter(edges):
     converter = {}
+    for u, v, w in edges:
         converter[(u,v)] = w
     return converter
 
