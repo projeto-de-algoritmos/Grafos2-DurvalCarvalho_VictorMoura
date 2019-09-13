@@ -10,7 +10,12 @@ function todayis() {
 todayis();
 
 // ============================================================ //
-
+function get_data() {
+  request('GET', 'http://localhost:5000/').done(function (res) {
+    console.log(res.getBody());
+  });
+}
+get_data();
 
 
 
