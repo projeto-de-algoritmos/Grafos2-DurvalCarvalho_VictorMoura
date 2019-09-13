@@ -2,6 +2,7 @@ from flask_api import FlaskAPI
 from flask import request
 from flask_cors import CORS, cross_origin
 from fetch_data import get_result
+from get_country_data import get_country_data
 
 app = FlaskAPI(__name__)
 
@@ -19,6 +20,14 @@ def currency_converter():
     }
 
     result = get_result(**params)
+
+    return result
+
+@app.route('/country_data')
+@cross_origin()
+def country_data():
+
+    result = get_country_data()
 
     return result
 
