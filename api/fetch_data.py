@@ -52,21 +52,21 @@ def bellman_ford(ref, edges):
             # marking past vertices to avoid algorithm use negative cycles
             # remove to allow the algorithm to find the best path from one 
             # currency to another
-            # if not v in visited:
-            #     if dist[v] > dist[u] + w:
-            #         visited.add(v)
-            #         dist[v] = dist[u] + w
-            #         pred[v] = u
+            if not v in visited:
+                if dist[v] > dist[u] + w:
+                    visited.add(v)
+                    dist[v] = dist[u] + w
+                    pred[v] = u
 
             # WITH NEGATIVE CYCLE
             # Se eu permitir que o algoritmo use os caminhos negativos 
             # durante as N*M interações, quando tento encontrar o 
             # 'melhor caminho' na função get_path_from_a_to_b, o while vira 
             # um loop infinito
-            if dist[v] > dist[u] + w:
-                visited.add(v)
-                dist[v] = dist[u] + w
-                pred[v] = u
+            # if dist[v] > dist[u] + w:
+            #     visited.add(v)
+            #     dist[v] = dist[u] + w
+            #     pred[v] = u
     
     return dist, pred
 
@@ -97,7 +97,7 @@ def read_edges_from_file():
     return edges
 
 # quando tento ir do AED(moeda do emirados árabes) para o BRL
-def get_path_from_a_to_b(a, b):
+def get_path_from_a_to_b(a, b, pred):
         to = b
         _from = a
     
@@ -112,20 +112,17 @@ def get_path_from_a_to_b(a, b):
         path = list( reversed(path) )
         return path
 
-if __name__ == '__main__':
+def get_result(_from='BRL', to='USD', initial_value=1):
 
     # Essa parte faz a integração com as APIs. Eu salvei os dados da última
     # execução no arquivo edges.txt
-    # edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges
+    edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges
     
-    edges = read_edges_from_file()
+    # edges = read_edges_from_file()
     edges += add_junction_currency_between_exchange_houses(edges)
 
     # dict to get convertion rate from 2 currency
     converter = get_converter(edges)
-
-    _from = 'BRL'
-    to = 'USD'
 
     # remove edge with direct conversion between the two currencies asked
     edges = remove_direct_conversion_edges(edges, _from, to)
@@ -140,11 +137,23 @@ if __name__ == '__main__':
 
     print('Com 1 {0} é possível conseguir {1} da moeda {2}'.format(_from, brl_to[to], to))
 
-    path = get_path_from_a_to_b(a=_from, b=to)
+    path = get_path_from_a_to_b(a=_from, b=to, pred=pred)
 
-    total = 1000
+    response = {
+        'conversion_factor': brl_to[to],
+        'path': []
+    }
+
+    total = initial_value
     for i in range(len(path) - 1):
         pair = ( path[i], path[i+1] )
         total = round(total * converter[ pair ], 2)
-        print(pair, round(total, 2))
-    print('final: ', round(total, 2), 'convertion rate: ', total/1000 )
+        response['path'].append({
+            'edge': pair,
+            'conversion_factor': round(total, 2)
+        })
+    # print('final: ', round(total, 2), 'convertion rate: ', total/1000 )
+
+    return response
+
+# get_result()
