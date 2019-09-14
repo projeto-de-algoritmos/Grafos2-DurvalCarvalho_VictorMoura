@@ -157,3 +157,6 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     return response
 
 # get_result()
+
+if __name__ == '__main__':
+    edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges
