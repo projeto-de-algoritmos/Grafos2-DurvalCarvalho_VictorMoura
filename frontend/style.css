@@ -212,8 +212,9 @@ ul.add-currency-list li span {
 
 .arrow img {
   max-width: 100%;
-  height: 100px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
   display: block;
 }

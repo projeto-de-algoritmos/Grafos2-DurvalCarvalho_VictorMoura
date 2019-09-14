@@ -11,20 +11,88 @@ todayis();
 
 // ============================================================ //
 
+
+
+function put_path_cards(path) {
+
+  let exchange_house = {
+    "CC": "Currency Converter",
+    "CL": "Currecy Layer",
+    "ER": "Exchange Rates",
+    "FI": "Fixer IO",
+    "OE": "Open Exchange"
+  }
+
+  path.shift();
+
+  destiny_node = document.querySelector('.end.currency');
+
+  for(let i=0; i<path.length; i++) {
+
+    console.log(path[i]);
+
+    let n_cur = path[i].edge[0];
+    
+    let house_tag = n_cur.substring(4);
+
+    if(!house_tag) {
+      house_tag = 'Real Money';
+    }
+
+    n_cur = n_cur.substring(0, 3);
+    
+    let r_cur = currencies.find(c => c.abbreviation == n_cur);
+
+    destiny_node.insertAdjacentHTML('beforebegin',
+      `
+        <li class="middle currency" id=${r_cur.abbreviation}>
+          <img src=${r_cur.flagURL} class="flag">
+          <div class="info">
+            <p class="input">
+              <span class="currency-symbol"> ${r_cur.symbol} </span>
+              <input disabled="" value=${path[i].conversion_factor}>
+            </p>
+            <p class="currency-name"> ${r_cur.currency_name} </p>
+            <p class="currency-name">  
+              Exchange House: ${exchange_house[house_tag]}
+            </p>
+          </div>
+        </li>
+
+        <div class="arrow">
+          <img src="arrow.png" alt="">
+        </div>
+      `
+    )
+
+  }
+
+}
+
+
+
+
+//    PEGAR AS DUAS MOEDAS SELECIONADAS E MANDAR PRO BACKEND
+// ============================================================ //
+
+// CHAMAR A BACKEND PARA PEGAR AS MOEDAS DE HOJE
 async function get_data(f, t, i) {
   let response = await fetch(`http://localhost:5000?f=${f}&t=${t}&i=${i}`);
   let data = await response.json()
+
+  put_path_cards(data.path);
+
   return data;
 }
 
+// COLOCAR O VALOR FINAL OBTIDO NA MOEDA DE DESTINO
 function show_result(data, initial){
   ee = document.querySelector('.end.currency .info .input input')
   final_value = data.conversion_factor * initial
   ee.value = final_value.toFixed(2)
-  
-  add_new_currency("JPY")
 }
 
+// MANDAR AS MOEDAS SELECIONADAS PARA O BACKEND PROCESSAR
 async function get_path_btn(event){
   var s = document.getElementsByClassName("start currency");
   var e = document.getElementsByClassName("end currency");
@@ -36,236 +104,52 @@ async function get_path_btn(event){
   get_data(s[0].id, e[0].id, i)
   .then(data => show_result(data, i)); 
 }
+// ============================================================ //
+
+
+
+
+
+
+
 
 
 
 //               ABRIR E FECHAR LISTA DE MOEDAS
 // ============================================================ //
-const button_start = document.querySelector('.undefined.start button');
-const button_end = document.querySelector('.undefined.end button');
+// const button_start = document.querySelector('.undefined.start button');
+// const button_end = document.querySelector('.undefined.end button');
 
-button_start.addEventListener("click", add_currency_button_start);
-button_end.addEventListener("click", add_currency_button_end);
+// button_start.addEventListener("click", add_currency_button_start);
+// button_end.addEventListener("click", add_currency_button_end);
 
 var button_clicked = '';
 const currency_list = document.querySelector('.add-currency-list');
 
+// ABRIR E FECHAR LISTA DE MOEDAS
 function add_currency_button_start(event) {
   button_clicked = 'start';
   currency_list.classList.toggle("open");
 }
 
+// ABRIR E FECHAR LISTA DE MOEDAS
 function add_currency_button_end(event) {
   button_clicked = 'end';
   currency_list.classList.toggle("open");
 }
+// ============================================================ //
 
-// Selecionar a moeda clicada
-const currencyList = document.querySelector(".currencies");
-const addCurrencyList = document.querySelector(".add-currency-list");
 
-// TODO: Popular essa variável com os nossos dados
-// let currencies = [
-//   {
-//     name: "US Dollar",
-//     abbreviation: "USD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/us.gif"
-//   },
-//   {
-//     name: "Euro",
-//     abbreviation: "EUR",
-//     symbol: "\u20AC",
-//     flagURL: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
-//   },
-//   {
-//     name: "Japanese Yen",
-//     abbreviation: "JPY",
-//     symbol: "\u00A5",
-//     flagURL: "http://www.geonames.org/flags/l/jp.gif"
-//   },
-//   {
-//     name: "British Pound",
-//     abbreviation: "GBP",
-//     symbol: "\u00A3",
-//     flagURL: "http://www.geonames.org/flags/l/uk.gif"
-//   },
-//   {
-//     name: "Australian Dollar",
-//     abbreviation: "AUD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/au.gif"
-//   },
-//   {
-//     name: "Canadian Dollar",
-//     abbreviation: "CAD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/ca.gif"
-//   },
-//   {
-//     name: "Swiss Franc",
-//     abbreviation: "CHF",
-//     symbol: "\u0043\u0048\u0046",
-//     flagURL: "http://www.geonames.org/flags/l/ch.gif"
-//   },
-//   {
-//     name: "Chinese Yuan Renminbi",
-//     abbreviation: "CNY",
-//     symbol: "\u00A5",
-//     flagURL: "http://www.geonames.org/flags/l/cn.gif"
-//   },
-//   {
-//     name: "Swedish Krona",
-//     abbreviation: "SEK",
-//     symbol: "\u006B\u0072",
-//     flagURL: "http://www.geonames.org/flags/l/se.gif"
-//   },
-//   {
-//     name: "New Zealand Dollar",
-//     abbreviation: "NZD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/nz.gif"
-//   },
-//   {
-//     name: "Mexican Peso",
-//     abbreviation: "MXN",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/mx.gif"
-//   },
-//   {
-//     name: "Singapore Dollar",
-//     abbreviation: "SGD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/sg.gif"
-//   },
-//   {
-//     name: "Hong Kong Dollar",
-//     abbreviation: "HKD",
-//     symbol: "\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/hk.gif"
-//   },
-//   {
-//     name: "Norwegian Krone",
-//     abbreviation: "NOK",
-//     symbol: "\u006B\u0072",
-//     flagURL: "http://www.geonames.org/flags/l/no.gif"
-//   },
-//   {
-//     name: "South Korean Won",
-//     abbreviation: "KRW",
-//     symbol: "\u20A9",
-//     flagURL: "http://www.geonames.org/flags/l/kr.gif"
-//   },
-//   {
-//     name: "Turkish Lira",
-//     abbreviation: "TRY",
-//     symbol: "\u20BA",
-//     flagURL: "http://www.geonames.org/flags/l/tr.gif"
-//   },
-//   {
-//     name: "Russian Ruble",
-//     abbreviation: "RUB",
-//     symbol: "\u20BD",
-//     flagURL: "http://www.geonames.org/flags/l/ru.gif"
-//   },
-//   {
-//     name: "Indian Rupee",
-//     abbreviation: "INR",
-//     symbol: "\u20B9",
-//     flagURL: "http://www.geonames.org/flags/l/in.gif"
-//   },
-//   {
-//     name: "Brazilian Real",
-//     abbreviation: "BRL",
-//     symbol: "\u0052\u0024",
-//     flagURL: "http://www.geonames.org/flags/l/br.gif"
-//   },
-//   {
-//     name: "South African Rand",
-//     abbreviation: "ZAR",
-//     symbol: "\u0052",
-//     flagURL: "http://www.geonames.org/flags/l/za.gif"
-//   },
-//   {
-//     name: "Philippine Peso",
-//     abbreviation: "PHP",
-//     symbol: "\u20B1",
-//     flagURL: "http://www.geonames.org/flags/l/ph.gif"
-//   },
-//   {
-//     name: "Czech Koruna",
-//     abbreviation: "CZK",
-//     symbol: "\u004B\u010D",
-//     flagURL: "http://www.geonames.org/flags/l/cz.gif"
-//   },
-//   {
-//     name: "Indonesian Rupiah",
-//     abbreviation: "IDR",
-//     symbol: "\u0052\u0070",
-//     flagURL: "http://www.geonames.org/flags/l/id.gif"
-//   },
-//   {
-//     name: "Malaysian Ringgit",
-//     abbreviation: "MYR",
-//     symbol: "\u0052\u004D",
-//     flagURL: "http://www.geonames.org/flags/l/my.gif"
-//   },
-//   {
-//     name: "Hungarian Forint",
-//     abbreviation: "HUF",
-//     symbol: "\u0046\u0074",
-//     flagURL: "http://www.geonames.org/flags/l/hu.gif"
-//   },
-//   {
-//     name: "Icelandic Krona",
-//     abbreviation: "ISK",
-//     symbol: "\u006B\u0072",
-//     flagURL: "http://www.geonames.org/flags/l/is.gif"
-//   },
-//   {
-//     name: "Croatian Kuna",
-//     abbreviation: "HRK",
-//     symbol: "\u006B\u006E",
-//     flagURL: "http://www.geonames.org/flags/l/hr.gif"
-//   },
-//   {
-//     name: "Bulgarian Lev",
-//     abbreviation: "BGN",
-//     symbol: "\u043B\u0432",
-//     flagURL: "http://www.geonames.org/flags/l/bg.gif"
-//   },
-//   {
-//     name: "Romanian Leu",
-//     abbreviation: "RON",
-//     symbol: "\u006C\u0065\u0069",
-//     flagURL: "http://www.geonames.org/flags/l/ro.gif"
-//   },
-//   {
-//     name: "Danish Krone",
-//     abbreviation: "DKK",
-//     symbol: "\u006B\u0072",
-//     flagURL: "http://www.geonames.org/flags/l/dk.gif"
-//   },
-//   {
-//     name: "Thai Baht",
-//     abbreviation: "THB",
-//     symbol: "\u0E3F",
-//     flagURL: "http://www.geonames.org/flags/l/th.gif"
-//   },
-//   {
-//     name: "Polish Zloty",
-//     abbreviation: "PLN",
-//     symbol: "\u007A\u0142",
-//     flagURL: "http://www.geonames.org/flags/l/pl.gif"
-//   },
-//   {
-//     name: "Israeli Shekel",
-//     abbreviation: "ILS",
-//     symbol: "\u20AA",
-//     flagURL: "http://www.geonames.org/flags/l/il.gif"
-//   }
-// ];
 
+
+
+
+
+
+// PEGAR AS MOEDAS DISPONÍVEIS NO BACKEND
+// ============================================================= //
+
+// TODAS AS MOEDAS DE HOJE
 var currencies = []
 
 async function populate_countries_array() {
@@ -276,10 +160,41 @@ async function populate_countries_array() {
 
 function fill_currencies(data){
   currencies = data;
+
+  // currency_list = document.querySelector('.add-currency-list');
+
+  for(var i=0; i<currencies.length; i++) {
+
+    currency_list.insertAdjacentHTML("beforeend",
+      `
+        <li data-currency=${currencies[i].abbreviation}>
+          <img src=${currencies[i].flagURL} class="flag">
+          <span> ${currencies[i].currency_name} </span>
+        </li>
+      `
+    )
+  }
 }
 
-populate_countries_array()
-  .then(data => fill_currencies(data)); 
+const fetched = false;
+
+if(!fetched) {
+  populate_countries_array().then(data => fill_currencies(data));
+}
+
+
+// ============================================================= //
+
+
+
+
+
+
+
+
+
+// SELECIONAR A LISTA DE MOEDAS DISPONÍVEIS (ESCONDIDA)
+const addCurrencyList = document.querySelector(".add-currency-list");
 
 addCurrencyList.addEventListener(
   "click", 
@@ -287,16 +202,21 @@ addCurrencyList.addEventListener(
 );
 
 function open_currency_list(event) {
+
+  // PEGO A MOEDA MAIS PRÓXIMA DA POSICAO CLICADA
   const clickedListItem = event.target.closest("li");
 
+  // SE ESSA MOEDA JÁ NÃO TIVER SIDO CLICADA
   if(!clickedListItem.classList.contains("disabled"))
-  {
+  { 
+    // ACHO ELA NA LISTA DE MOEDAS DISPONÍVEIS
     const newCurrency = currencies.find(
       c => c.abbreviation===clickedListItem.getAttribute(
         "data-currency"
       )
     );
 
+    // SE EU TIVER ACHADO ADICIONO NA LISTA DE MOEDAS SELECIONDAS
     if(newCurrency) {
       currency_list.classList.toggle("open");
       add_new_currency(newCurrency);
@@ -306,18 +226,25 @@ function open_currency_list(event) {
 
 function add_new_currency(currency) {
 
-  // marcar como já selecionado
+  // MARCO ESSA MOEDA COMO JÁ SELECIONADA
   addCurrencyList.querySelector(
     `[data-currency=${currency.abbreviation}]`
   ).classList.add("disabled");
 
-  // REMOVER BOTÃO QUE CHAMOU A LISTA
+  // DESCOBRO QUAL BOTÃO QUE CLICOU PARA RETIRÁ-LO DA TELA
   if(button_clicked === 'start') 
   {
-    const li_button_start = document.querySelector('.undefined.start');
 
-    const child = document.querySelector('.undefined.start button');
+
+    // ACHO O BOTÃO E REMOVO
+    const child = document.querySelector(
+      '.undefined.start button');
     child.parentNode.removeChild(child);
+
+
+    // ACHO O ELEMENTO NA LISTA DE MOEDAS
+    const li_button_start = document.querySelector(
+      '.undefined.start');
 
     li_button_start.classList.remove('undefined');
     li_button_start.classList.add('currency');
@@ -380,9 +307,21 @@ function add_new_currency(currency) {
 
 
 
-//           REMOVER MOEDA E ADC O BOTÃO NOVAMENTE
+
+
+
+//         TIRAR O MOEDA E ADCIONAR O BOTÃO NOVAMENTE
 // ============================================================ //
-currencyList.addEventListener("click", remove_currency_and_add_button);
+
+// SELCIONAR A LISTA DE MOEDAS SELECIONADAS (A MOSTRA)
+const currencyList = document.querySelector(".currencies");
+
+
+currencyList.addEventListener(
+  "click",
+  remove_currency_and_add_button
+);
+
 function remove_currency_and_add_button(event) {
   
   if(event.target.classList.contains("close")) {
@@ -399,6 +338,7 @@ function remove_currency_and_add_button(event) {
 
     parentNode.removeAttribute('id');
 
+    // REMOVER TODOS ELEMENTOS DENTRO DESSE LI
     while(parentNode.firstChild) {
       parentNode.removeChild(parentNode.firstChild);
     }
@@ -411,178 +351,20 @@ function remove_currency_and_add_button(event) {
       `
     );
 
-    const button_start = document.querySelector('.start.undefined button');
-    const button_end = document.querySelector('.end.undefined button');
+    const button_start = document.querySelector(
+      '.start.undefined button');
+
+    const button_end = document.querySelector(
+      '.end.undefined button');
 
     if(button_start) {
       button_start.addEventListener("click", add_currency_button_start);
     }
 
     if(button_end) {
-      button_end.addEventListener("click", add_currency_button_end);
+      button_end.addEventListener("click", 
+        add_currency_button_end);
     }
   }
 }
 // ============================================================ //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-const addCurrencyBtn = document.querySelector(".add-currency-btn");
-
-
-
-const dataURL = "https://api.exchangeratesapi.io/latest";
-
-const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY", "RUB"];
-let baseCurrency;
-let baseCurrencyAmount;
-
-
-
-
-
-// Event Listeners
-
-addCurrencyBtn.addEventListener("click", addCurrencyBtnClick);
-
-function addCurrencyBtnClick(event) {
-  addCurrencyBtn.classList.toggle("open");
-}
-
-addCurrencyList.addEventListener("click", addCurrencyListClick);
-
-function addCurrencyListClick(event) {
-  const clickedListItem = event.target.closest("li");
-  if(!clickedListItem.classList.contains("disabled")) {
-    const newCurrency = currencies.find(c => c.abbreviation===clickedListItem.getAttribute("data-currency"));
-    if(newCurrency) newCurrenciesListItem(newCurrency);
-  }
-}
-
-*/
-
-
-/*
-
-function setNewBaseCurrency(newBaseCurrencyLI) {
-  newBaseCurrencyLI.classList.add("base-currency");
-  baseCurrency = newBaseCurrencyLI.id;
-  const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
-  currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
-    const currencyRate = currencies.find(currency => currency.abbreviation===currencyLI.id).rate;
-    const exchangeRate = currencyLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
-    currencyLI.querySelector(".base-currency-rate").textContent = `1 ${baseCurrency} = ${exchangeRate} ${currencyLI.id}`;
-  });
-}
-
-currenciesList.addEventListener("input", currenciesListInputChange);
-
-function currenciesListInputChange(event) {
-  const isNewBaseCurrency = event.target.closest("li").id!==baseCurrency;
-  if(isNewBaseCurrency) {
-    currenciesList.querySelector(`#${baseCurrency}`).classList.remove("base-currency");
-    setNewBaseCurrency(event.target.closest("li"));
-  }
-  const newBaseCurrencyAmount = isNaN(event.target.value) ? 0 : Number(event.target.value);
-  if(baseCurrencyAmount!==newBaseCurrencyAmount || isNewBaseCurrency) {
-    baseCurrencyAmount = newBaseCurrencyAmount;
-    const baseCurrencyRate = currencies.find(currency => currency.abbreviation===baseCurrency).rate;
-    currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
-      if(currencyLI.id!==baseCurrency) {
-        const currencyRate = currencies.find(currency => currency.abbreviation===currencyLI.id).rate;
-        const exchangeRate = currencyLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
-        currencyLI.querySelector(".input input").value = exchangeRate*baseCurrencyAmount!==0 ? (exchangeRate*baseCurrencyAmount).toFixed(4) : "";
-      }
-    });
-  }
-}
-
-currenciesList.addEventListener("focusout", currenciesListFocusOut);
-
-function currenciesListFocusOut(event) {
-  const inputValue = event.target.value;
-  if(isNaN(inputValue) || Number(inputValue)===0) event.target.value="";
-  else event.target.value = Number(inputValue).toFixed(4);
-}
-
-currenciesList.addEventListener("keydown", currenciesListKeyDown);
-
-function currenciesListKeyDown(event) {
-  if(event.key==="Enter") event.target.blur();
-}
-
-// Auxiliary Functions
-
-
-
-function populateAddCyrrencyList() {
-  for(let i=0; i<currencies.length; i++) {
-    addCurrencyList.insertAdjacentHTML(
-      "beforeend", 
-      `<li data-currency=${currencies[i].abbreviation}>
-        <img src=${currencies[i].flagURL} class="flag"><span>${currencies[i].abbreviation} - ${currencies[i].name}</span>
-      </li>`
-    );
-  }
-}
-
-function populateCurrenciesList() {
-  for(let i=0; i<initiallyDisplayedCurrencies.length; i++) {
-    const currency = currencies.find(c => c.abbreviation===initiallyDisplayedCurrencies[i]);
-    if(currency) newCurrenciesListItem(currency);
-  }
-}
-
-function newCurrenciesListItem(currency) {
-  if(currenciesList.childElementCount===0) {
-    baseCurrency = currency.abbreviation;
-    baseCurrencyAmount = 0;
-  }
-  addCurrencyList.querySelector(`[data-currency=${currency.abbreviation}]`).classList.add("disabled");
-  const baseCurrencyRate = currencies.find(c => c.abbreviation===baseCurrency).rate;
-  const exchangeRate = currency.abbreviation===baseCurrency ? 1 : (currency.rate/baseCurrencyRate).toFixed(4);
-  const inputValue = baseCurrencyAmount ? (baseCurrencyAmount*exchangeRate).toFixed(4) : "";
-
-  currenciesList.insertAdjacentHTML(
-    "beforeend",
-    `<li class="currency ${currency.abbreviation===baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
-      <img src=${currency.flagURL} class="flag">
-      <div class="info">
-        <p class="input"><span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue}></p>
-        <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
-        <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation}</p>
-      </div>
-      <span class="close">&times;</span>
-    </li>`
-  );
-}
-
-fetch(dataURL)
-  .then(res => res.json())
-  .then(data => {
-    data.rates["EUR"] = 1;
-    currencies = currencies.filter(currency => data.rates[currency.abbreviation]);
-    currencies.forEach(currency => currency.rate = data.rates[currency.abbreviation]);
-    populateAddCyrrencyList();
-    populateCurrenciesList();
-  })
-  .catch(err => console.log(err));
-
-*/
