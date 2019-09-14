@@ -112,6 +112,34 @@ def get_path_from_a_to_b(a, b, pred):
         path = list( reversed(path) )
         return path
 
+def dfs(at, root_node, valid_paths, adj_list, visited):
+    
+    if visited[at]:
+        return valid_paths
+    
+    visited[at] = True
+
+    valid_paths[root_node].add(at)
+
+    for n in adj_list[at]:
+        valid_paths = dfs(n, root_node, valid_paths, adj_list, visited)
+    
+    return valid_paths
+
+def get_valid_paths(edges):
+
+    adj_list = defaultdict(set)
+    valid_paths = defaultdict(set)
+
+    for v, u, w in edges:
+        adj_list[v].add(u)
+    
+    for u in adj_list:
+        visited = defaultdict(lambda:False)
+        valid_paths = dfs(u, u, valid_paths, adj_list, visited)
+
+    return valid_paths
+
 def get_result(_from='BRL', to='USD', initial_value=1):
 
     # Essa parte faz a integração com as APIs. Eu salvei os dados da última
@@ -124,6 +152,9 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     # dict to get convertion rate from 2 currency
     converter = get_converter(edges)
 
+    # dicionário para verificar se da moeda A é possível atingir a moeda B
+    valid_paths = get_valid_paths(edges)
+
     # remove edge with direct conversion between the two currencies asked
     edges = remove_direct_conversion_edges(edges, _from, to)
 
@@ -135,7 +166,7 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     # getting the real convertion rates back
     brl_to = {curr: 2**(-log2_rate) for curr, log2_rate in brl_to.items()}
 
-    print('Com 1 {0} é possível conseguir {1} da moeda {2}'.format(_from, brl_to[to], to))
+    # print('Com 1 {0} é possível conseguir {1} da moeda {2}'.format(_from, brl_to[to], to))
 
     path = get_path_from_a_to_b(a=_from, b=to, pred=pred)
 
@@ -159,4 +190,5 @@ def get_result(_from='BRL', to='USD', initial_value=1):
 # get_result()
 
 if __name__ == '__main__':
-    edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges
+    get_result()
+    # edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges
