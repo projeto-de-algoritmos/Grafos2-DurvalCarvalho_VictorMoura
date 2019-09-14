@@ -9,13 +9,31 @@ def get_country_data():
 
     response = []
 
+
+
+    obj = {
+        'name': "Europe",
+        'abbreviation': "EUR",
+        'symbol': '€',
+        'currency_name': "Europe",
+        'flagURL': "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+    }
+
+    response.append(obj)
+
     for country in json_data:
+
+        if country['currencies'][0]['name'] == 'Euro':
+            continue
+
         obj = {
             'name': country['name'],
             'abbreviation': country['currencies'][0]['code'],
             'symbol': country['currencies'][0]['symbol'],
+            'currency_name': country['currencies'][0]['name'],
             'flagURL': country['flag']
         }
+
 
         response.append(obj)
 
