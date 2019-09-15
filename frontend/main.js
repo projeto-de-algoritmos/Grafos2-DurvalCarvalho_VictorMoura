@@ -11,9 +11,12 @@ todayis();
 
 // ============================================================ //
 
-
+path_on_screen = false;
 
 function put_path_cards(path) {
+
+  path_on_screen = true;
+  path.pop();
 
   let exchange_house = {
     "CC": "Currency Converter",
@@ -23,24 +26,20 @@ function put_path_cards(path) {
     "OE": "Open Exchange"
   }
 
-  path.shift();
-
   destiny_node = document.querySelector('.end.currency');
 
-  for(let i=0; i<path.length; i++) {
+  for (let i = 0; i < path.length; i++) {
 
-    console.log(path[i]);
+    let n_cur = path[i].edge[1];
 
-    let n_cur = path[i].edge[0];
-    
     let house_tag = n_cur.substring(4);
 
-    if(!house_tag) {
+    if (!house_tag) {
       house_tag = 'Real Money';
     }
 
     n_cur = n_cur.substring(0, 3);
-    
+
     let r_cur = currencies.find(c => c.abbreviation == n_cur);
 
     destiny_node.insertAdjacentHTML('beforebegin',
@@ -69,8 +68,18 @@ function put_path_cards(path) {
 
 }
 
+function popup_message() {
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
 
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 
+}
 
 //    PEGAR AS DUAS MOEDAS SELECIONADAS E MANDAR PRO BACKEND
 // ============================================================ //
@@ -80,20 +89,25 @@ async function get_data(f, t, i) {
   let response = await fetch(`http://localhost:5000?f=${f}&t=${t}&i=${i}`);
   let data = await response.json()
 
+  if ("nonexistent_path" in data) {
+    popup_message();
+    return;
+  }
+
   put_path_cards(data.path);
 
   return data;
 }
 
 // COLOCAR O VALOR FINAL OBTIDO NA MOEDA DE DESTINO
-function show_result(data, initial){
+function show_result(data, initial) {
   ee = document.querySelector('.end.currency .info .input input')
   final_value = data.conversion_factor * initial
   ee.value = final_value.toFixed(2)
 }
 
 // MANDAR AS MOEDAS SELECIONADAS PARA O BACKEND PROCESSAR
-async function get_path_btn(event){
+async function get_path_btn(event) {
   var s = document.getElementsByClassName("start currency");
   var e = document.getElementsByClassName("end currency");
 
@@ -102,7 +116,7 @@ async function get_path_btn(event){
   i = ss.value
 
   get_data(s[0].id, e[0].id, i)
-  .then(data => show_result(data, i)); 
+    .then(data => show_result(data, i));
 }
 // ============================================================ //
 
@@ -158,12 +172,12 @@ async function populate_countries_array() {
   return data;
 }
 
-function fill_currencies(data){
+function fill_currencies(data) {
   currencies = data;
 
   // currency_list = document.querySelector('.add-currency-list');
 
-  for(var i=0; i<currencies.length; i++) {
+  for (var i = 0; i < currencies.length; i++) {
 
     currency_list.insertAdjacentHTML("beforeend",
       `
@@ -178,7 +192,7 @@ function fill_currencies(data){
 
 const fetched = false;
 
-if(!fetched) {
+if (!fetched) {
   populate_countries_array().then(data => fill_currencies(data));
 }
 
@@ -197,7 +211,7 @@ if(!fetched) {
 const addCurrencyList = document.querySelector(".add-currency-list");
 
 addCurrencyList.addEventListener(
-  "click", 
+  "click",
   open_currency_list
 );
 
@@ -207,17 +221,16 @@ function open_currency_list(event) {
   const clickedListItem = event.target.closest("li");
 
   // SE ESSA MOEDA JÁ NÃO TIVER SIDO CLICADA
-  if(!clickedListItem.classList.contains("disabled"))
-  { 
+  if (!clickedListItem.classList.contains("disabled")) {
     // ACHO ELA NA LISTA DE MOEDAS DISPONÍVEIS
     const newCurrency = currencies.find(
-      c => c.abbreviation===clickedListItem.getAttribute(
+      c => c.abbreviation === clickedListItem.getAttribute(
         "data-currency"
       )
     );
 
     // SE EU TIVER ACHADO ADICIONO NA LISTA DE MOEDAS SELECIONDAS
-    if(newCurrency) {
+    if (newCurrency) {
       currency_list.classList.toggle("open");
       add_new_currency(newCurrency);
     }
@@ -232,8 +245,7 @@ function add_new_currency(currency) {
   ).classList.add("disabled");
 
   // DESCOBRO QUAL BOTÃO QUE CLICOU PARA RETIRÁ-LO DA TELA
-  if(button_clicked === 'start') 
-  {
+  if (button_clicked === 'start') {
 
 
     // ACHO O BOTÃO E REMOVO
@@ -250,7 +262,7 @@ function add_new_currency(currency) {
     li_button_start.classList.add('currency');
     li_button_start.setAttribute('id', currency.abbreviation);
 
-    li_button_start.insertAdjacentHTML("afterbegin", 
+    li_button_start.insertAdjacentHTML("afterbegin",
       `<img src=${currency.flagURL} class="flag">
         <div class="info">
           <p class="input">
@@ -279,7 +291,7 @@ function add_new_currency(currency) {
 
     li_button_end.setAttribute('id', currency.abbreviation);
 
-    li_button_end.insertAdjacentHTML("afterbegin", 
+    li_button_end.insertAdjacentHTML("afterbegin",
       `<img src=${currency.flagURL} class="flag">
         <div class="info">
           <p class="input">
@@ -323,8 +335,12 @@ currencyList.addEventListener(
 );
 
 function remove_currency_and_add_button(event) {
-  
-  if(event.target.classList.contains("close")) {
+
+  if (event.target.classList.contains("close")) {
+
+    if(path_on_screen) {
+      location.reload();
+    }
 
     const parentNode = event.target.parentNode;
 
@@ -339,11 +355,11 @@ function remove_currency_and_add_button(event) {
     parentNode.removeAttribute('id');
 
     // REMOVER TODOS ELEMENTOS DENTRO DESSE LI
-    while(parentNode.firstChild) {
+    while (parentNode.firstChild) {
       parentNode.removeChild(parentNode.firstChild);
     }
 
-    parentNode.insertAdjacentHTML("afterbegin", 
+    parentNode.insertAdjacentHTML("afterbegin",
       `
       <button type="button">
         Selecionar moeda
@@ -357,12 +373,12 @@ function remove_currency_and_add_button(event) {
     const button_end = document.querySelector(
       '.end.undefined button');
 
-    if(button_start) {
+    if (button_start) {
       button_start.addEventListener("click", add_currency_button_start);
     }
 
-    if(button_end) {
-      button_end.addEventListener("click", 
+    if (button_end) {
+      button_end.addEventListener("click",
         add_currency_button_end);
     }
   }

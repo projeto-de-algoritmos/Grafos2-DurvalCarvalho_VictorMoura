@@ -148,12 +148,16 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     
     # edges = read_edges_from_file()
     edges += add_junction_currency_between_exchange_houses(edges)
+    
+    # dicionário para verificar se da moeda A é possível atingir a moeda B
+    valid_paths = get_valid_paths(edges)
+
+    if to not in valid_paths[_from]:
+        response = {'nonexistent_path':True}
+        return response
 
     # dict to get convertion rate from 2 currency
     converter = get_converter(edges)
-
-    # dicionário para verificar se da moeda A é possível atingir a moeda B
-    valid_paths = get_valid_paths(edges)
 
     # remove edge with direct conversion between the two currencies asked
     edges = remove_direct_conversion_edges(edges, _from, to)
@@ -173,11 +177,12 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     response = {
         'conversion_factor': brl_to[to],
         'path': []
-    }
+    }    
 
     total = initial_value
     for i in range(len(path) - 1):
         pair = ( path[i], path[i+1] )
+        print(pair)
         total = round(total * converter[ pair ], 2)
         response['path'].append({
             'edge': pair,
@@ -190,5 +195,6 @@ def get_result(_from='BRL', to='USD', initial_value=1):
 # get_result()
 
 if __name__ == '__main__':
-    get_result()
+    r = get_result(_from='BRL', to='INR', initial_value=1000)
+    print(r)
     # edges = FixerIO().edges + CurrencyLayer().edges + ExchangeRatesAPI().edges + CurrencyConverter().edges

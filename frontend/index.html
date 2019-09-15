@@ -19,7 +19,7 @@
 
     <div class="date">
     </div>
-    
+
     <ul class="currencies">
 
       <li class="undefined start">
@@ -37,56 +37,12 @@
           Selecionar moeda
         </button>
       </li>
-
-      <!-- <li class="currency based-currency" id="USD">
-        <img src="http://www.geonames.org/flags/l/us.gif" class="flag">
-        <div class="info">
-          <p class="input">
-            <span class="currency-symbol">&#36;</span>
-            <input placeholder="0.00">
-          </p>
-          <p class="currency-name"> USD - US Dollar </p>
-          <p class="base-currency-rate"> 1 USD = 1 USD </p>
-        </div>
-        <span class="close"> &times;</span>
-      </li>
-
-      <li class="currency" id="JPY">
-        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
-        <div class="info">
-          <p class="input">
-            <span class="currency-symbol">&#36;</span>
-            <input placeholder="0.00">
-          </p>
-          <p class="currency-name"> JPY - Japanese Yen </p>
-          <p class="base-currency-rate"> 1 USD = 111.04 USD </p>
-        </div>
-        <span class="close"> &times;</span>
-      </li>
-
-      <li class="currency" id="JPY">
-        <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
-        <div class="info">
-          <p class="input">
-            <span class="currency-symbol">&#36;</span>
-            <input placeholder="0.00">
-          </p>
-          <p class="currency-name"> JPY - Japanese Yen </p>
-          <p class="base-currency-rate"> 1 USD = 111.04 USD </p>
-        </div>
-        <span class="close"> &times;</span>
-      </li> -->
-
     </ul>
 
-    <button onclick="get_path_btn()" class="add-currency-btn" >
-      <i> < </i>
-      Get Path 
-    </button>
-
-    <ul class="add-currency-list">
-
-      <li data-currency="JPY">
+    <button onclick="get_path_btn()" class="add-currency-btn">
+      <i>
+        < </i> Get Path </button> <ul class="add-currency-list">
+          <!-- <li data-currency="JPY">
         <img src="http://www.geonames.org/flags/l/jp.gif" class="flag">
         <span> JPY - Japanese Yen </span>
       </li>
@@ -104,8 +60,16 @@
       <li data-currency="MXN">
         <img src="http://www.geonames.org/flags/l/mx.gif" class="flag">
         <span> MXN - Mexican Peso </span>
-      </li>
-    </ul>
+      </li> -->
+          </ul>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <p>Não existe um caminho de conversão entre essas duas moedas</p>
+    </div>
   </div>
 
   <script src="main.js"></script>
