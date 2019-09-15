@@ -3,6 +3,12 @@
 Esse projeto tem o objetivo de encontrar a melhor 
 sequência de cambios de uma moeda para outra.
 
+# Resultado
+
+<p align="center">
+	<img src="imgs/betina.gif">
+</p>
+
 # Cenário
 
 Imagine o seguinte cenário. Você tem R$1.000 Reais e quer converter Rublos.
@@ -106,15 +112,20 @@ As informações que precisam ser obtidas são:
 
 * Existe algum ciclo positivo?
 
-# Algoritmos
+# Algoritmo
 
 Com base no requisito de poder descobrir o menor caminho 
 de uma moeda para qualquer outra moeda, uma boa abordagem 
-seria utilizar o algoritmo de [Floyd-Warshall](https://github.com/edsomjr/TEP/blob/master/Grafos/slides/SSP-3/SSP-3.pdf).
+seria utilizar o algoritmo de [Bellman Ford](https://github.com/edsomjr/TEP/blob/master/Grafos/slides/SSP-1/SSP-1.pdf).
 
-Esse algoritmo computa a distância mínima entre todos os 
-pares de vértices conectados em uma execução com a 
-complexidade O(V³) e retorna as queries em O(1).
+Este algoritmo computa o caminho mínimo de todas as moedas dada uma moeda 
+inicial.
+
+Esse algoritmo é versátil e consegue computar grafos com arestas com peso 
+negativo, sendo esse o principal motivo para sua escolha.
+
+Sua complexidade é O(VE), sendo V o número de vértices e E o número de 
+arestas.
 
 # APIS de câmbio de moedas
 - https://fixer.io/ (Somente EUR -> Outras Moedas)
@@ -122,3 +133,107 @@ complexidade O(V³) e retorna as queries em O(1).
 - https://currencylayer.com/ (Somente USD -> Outras Moedas)
 - https://docs.openexchangerates.org/ (Somente USD -> Outras Moedas)
 - https://www.currencyconverterapi.com/
+
+# Postmortem
+
+O objetivo inicial desse projeto era farmar dinheiro atráves de ciclos 
+negativos entre a conversão de moedas. Porém, por conta de diversos problemas 
+encontrados o escopo foi reduzido para encontrar o melhor caminho não direto 
+de conversão entre duas moedas.
+
+## Problema 1 - Não conseguimos reproduzir o caminho do ciclo negativo encontrado
+
+Após o processamento do grafo formado pelas cotações do dia 11 de setembro 
+de 2019, era possível transformar 1 BRL em aproximadamente 2500 USD. 
+Essa conversão foi possível pois o algoritmo encontrou um ciclo negativo 
+entre as moedas MXC -> JPY -> SAR -> MXC, onde a cada ciclo era possível 
+gerar 4 centavos. Como toda vez que ocorria esse ciclo a "distância" entre 
+as moedas diminuia, o algorítmo utilizou essa caminho N vezes até o final de 
+sua execução.
+
+O algoritmo conseguia informar a taxa resultante desse caminho, porém não era 
+possível reproduzir o caminho encontrado, devido o fato do ciclo uma vez 
+formato ser autocontido, não tento um antecessor que o descobriu.
+
+O algoritmo de bellman ford, realiza durante E (qnt de arestas) execuções o 
+relaxamento das distâncias. Isso é, para cada aresta processada ele verifica 
+se essa aresta melhora algum caminho, caso melhore ele atualiza a matriz de 
+predecessores, que futuramente será usada para reproduzir o caminho de uma 
+moeda para outra.
+
+O problema é, quando existe ciclos negativos toda execução do algoritmo o 
+caminho do ciclo é tomado, uma vez que ele 'diminui' a distância entre as 
+moedas, e atualiza o predecessor da moeda processada.
+
+Por exemplo, imagine que quero encontrar o melhor caminho da moeda 
+BRL para JPY. Vamos supor que o caminho encontrado seja :
+```
+BRL -> USD -> EUR -> MXC -> EUR -> MXC -> ... -> MXC -> JPY.
+```
+
+Observe que há um ciclo negativo entre a moeda EUR e MXC. Quando isso 
+acontece, o predecessor do EUR é o MXC e do MXC é o EUR.
+
+Desse modo quando vamos tentar refazer o caminho partindo da moeda destino 
+para a moeda de origem o seguinte cenário ocorre:
+
+Primeiro achamos o predecessor da moeda JPY
+```
+JPY <- MXC
+```
+Agora o predecessor da moeda MXC
+```
+JPY <- MXC <- EUR
+```
+E agora o problema ocorre. Quando tentamos achar o predecessor da moeda EUR 
+voltamos para a moeda MXC:
+```
+JPY <- MXC <- EUR <- MXC <- EUR <- MXC <- EUR <- ...
+```
+Quando voltamos para um moeda que já foi vista nesse caminho, perdemos a 
+trilha para a moeda de origem, não sendo possível reproduzir o caminho.
+
+Quando visualizamos esse problema, tentamos resolver durante alguns dias, 
+mas devido o curto prazo de entrega e a diculdade de ambos os  
+desenvolvedores para trabalhar no frontend, foi decidido que o escopo do 
+projeto seria encontrar o melhor caminho entre duas moedas ignorando os 
+ciclos negativos.
+
+## Problema 2
+
+Quando removido os ciclos negativos, a melhor conversão nos casos onde havia 
+a aresta conectado as duas moedas era a conversão direta. E como o grafo 
+montado é densamente conectado, isso é, quase todas as moedas tinham conexão 
+com quase todas as outras moedas, fazia com que o problema a ser resolvido 
+com grafo se resumisse a uma simples conversão direta, o que tirou toda a 
+graça do projeto.
+
+Exemplo:
+
+Uma das APIs que utilizamos, que no nosso contexto chamamos de Casa de Cambio, 
+realiza a conversão USD para BRL.
+
+Se tentássemos encontrar o melhor caminho de USD para BRL, provavelmente 
+seria a conversão direta de USD para BRL.
+
+A solução para esse "problema" foi remover as conexões diretas das duas 
+moedas da query. Isso é, toda vez que a aplicação vai processa a melhor 
+distância da moeda A para a moeda B, antes é removido as arestas que fazem a 
+conexão diretas dessas duas moedas.
+
+## Escopo final
+
+Uma vez contornados esses 2 erros, o escopo final do projeto foi encontrar 
+o melhor caminho não direto entre duas moedas.
+
+## Observação
+
+Uma detalhe que não me orgulho é o frontend desse projeto. Ambos os 
+integrantes do projeto não tinham familiaridade com HTML, CSS e JavaScript e 
+foi preciso aprender fazendo.
+
+Isso fez com que o código do frontend, principalmente a parte em JavaScript, 
+virasse uma verdadeira bagunça e ficasse cheio de gambiarras.
+
+Após o término do projeto, ambos se comprometeram a estudar mais HTML, CSS e 
+JavaScript.
