@@ -26,6 +26,11 @@ Execute o server da aplicação
 python api/apy.py
 ```
 
+Abra o localhost na porta 500
+"""
+http://localhost:5000
+"""
+
 # Cenário
 
 Imagine o seguinte cenário. Você tem R$1.000 Reais e quer converter Rublos.

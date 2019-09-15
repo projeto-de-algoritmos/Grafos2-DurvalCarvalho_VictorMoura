@@ -83,10 +83,14 @@ function popup_message() {
 //    PEGAR AS DUAS MOEDAS SELECIONADAS E MANDAR PRO BACKEND
 // ============================================================ //
 
+// PROBLEMA AQUI!!!!
+
 // CHAMAR A BACKEND PARA PEGAR AS MOEDAS DE HOJE
 async function get_data(f, t, i) {
+
   let response = await fetch(`http://localhost:5000?f=${f}&t=${t}&i=${i}`);
-  let data = await response.json()
+
+  let data = await response.json();
 
   if ("nonexistent_path" in data) {
     popup_message();
@@ -100,6 +104,7 @@ async function get_data(f, t, i) {
 
 // COLOCAR O VALOR FINAL OBTIDO NA MOEDA DE DESTINO
 function show_result(data, initial) {
+
   ee = document.querySelector('.end.currency .info .input input')
   final_value = data.conversion_factor * initial
   ee.value = data.path[data.path.length-1].conversion_factor
@@ -107,19 +112,23 @@ function show_result(data, initial) {
 
 // MANDAR AS MOEDAS SELECIONADAS PARA O BACKEND PROCESSAR
 async function get_path_btn(event) {
+
   var s = document.getElementsByClassName("start currency");
   var e = document.getElementsByClassName("end currency");
 
-  ss = document.querySelector('.start.currency .info .input input')
+  ss = document.querySelector('.start.currency .info .input input');
 
-  i = ss.value
+  i = ss.value;
 
-  get_data(s[0].id, e[0].id, i)
-    .then(data => show_result(data, i));
+  console.log("Antes");
+
+  get_data(s[0].id, e[0].id, i).then(data => show_result(data, i));
 }
 // ============================================================ //
 
 
+// btn_converter = document.querySelector('.container .add-currency-btn')
+// btn_converter.addEventListener("click", get_path_btn);
 
 
 

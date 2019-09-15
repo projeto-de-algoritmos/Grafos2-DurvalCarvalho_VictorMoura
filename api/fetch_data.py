@@ -153,7 +153,7 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     valid_paths = get_valid_paths(edges)
 
     if to not in valid_paths[_from]:
-        response = {'nonexistent_path':True}
+        response = {"nonexistent_path":True}
         return response
 
     # dict to get convertion rate from 2 currency
@@ -175,17 +175,17 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     path = get_path_from_a_to_b(a=_from, b=to, pred=pred)
 
     response = {
-        'conversion_factor': brl_to[to],
-        'path': []
+        "conversion_factor": brl_to[to],
+        "path": []
     }    
 
     total = initial_value
     for i in range(len(path) - 1):
         pair = ( path[i], path[i+1] )
         total = round(total * converter[ pair ], 2)
-        response['path'].append({
-            'edge': pair,
-            'conversion_factor': round(total, 2)
+        response["path"].append({
+            "edge": pair,
+            "conversion_factor": round(total, 2)
         })
     # print('final: ', round(total, 2), 'convertion rate: ', total/1000 )
 
