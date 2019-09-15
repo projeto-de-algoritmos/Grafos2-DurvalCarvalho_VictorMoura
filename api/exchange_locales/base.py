@@ -1,12 +1,21 @@
 import requests
 import pickle
+import os
 
 class BaseLocale(object):
+
+    
+
     def __init__(self, name='', slug='', base_url='', force_update=False):        
         self.base_url = base_url
         self.name = name
         self.slug = slug
         self.apiKey = ''
+
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        base_path = os.path.join(BASE_DIR, 'pickles')
+        base_filename = '{0}.pickle'.format(self.name)
+        self.path = os.path.join(base_path, base_filename)
 
         if force_update:
             self.get_updates()
@@ -33,11 +42,12 @@ class BaseLocale(object):
         return response.json()
 
     def to_pickle(self):
-        with open('pickles/{0}.pickle'.format(self.name), 'wb') as pickle_file:
+        
+        with open(self.path, 'wb') as pickle_file:
             pickle.dump(self, pickle_file)
 
     def from_pickle(self):
-        with open('pickles/{0}.pickle'.format(self.name), 'rb') as pickle_data:
+        with open(self.path, 'rb') as pickle_data:
             self_obj = pickle.load(pickle_data)
             self.edges = self_obj.edges
             self.base_url = self_obj.base_url

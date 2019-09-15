@@ -182,13 +182,14 @@ def get_result(_from='BRL', to='USD', initial_value=1):
     total = initial_value
     for i in range(len(path) - 1):
         pair = ( path[i], path[i+1] )
-        print(pair)
         total = round(total * converter[ pair ], 2)
         response['path'].append({
             'edge': pair,
             'conversion_factor': round(total, 2)
         })
     # print('final: ', round(total, 2), 'convertion rate: ', total/1000 )
+
+    print(response)
 
     return response
 

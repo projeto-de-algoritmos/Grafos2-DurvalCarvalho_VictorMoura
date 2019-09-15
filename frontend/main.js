@@ -34,10 +34,6 @@ function put_path_cards(path) {
 
     let house_tag = n_cur.substring(4);
 
-    if (!house_tag) {
-      house_tag = 'Real Money';
-    }
-
     n_cur = n_cur.substring(0, 3);
 
     let r_cur = currencies.find(c => c.abbreviation == n_cur);
@@ -52,9 +48,12 @@ function put_path_cards(path) {
               <input disabled="" value=${path[i].conversion_factor}>
             </p>
             <p class="currency-name"> ${r_cur.currency_name} </p>
-            <p class="currency-name">  
+            <p class="currency-name">
               Exchange House: ${exchange_house[house_tag]}
             </p>
+            <p class="currency-name">
+              Country: ${r_cur.name}
+            <p>
           </div>
         </li>
 
@@ -103,7 +102,7 @@ async function get_data(f, t, i) {
 function show_result(data, initial) {
   ee = document.querySelector('.end.currency .info .input input')
   final_value = data.conversion_factor * initial
-  ee.value = final_value.toFixed(2)
+  ee.value = data.path[data.path.length-1].conversion_factor
 }
 
 // MANDAR AS MOEDAS SELECIONADAS PARA O BACKEND PROCESSAR

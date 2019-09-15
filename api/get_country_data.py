@@ -15,7 +15,7 @@ def get_country_data():
         'name': "Europe",
         'abbreviation': "EUR",
         'symbol': '€',
-        'currency_name': "Europe",
+        'currency_name': "Euro",
         'flagURL': "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
     }
 
