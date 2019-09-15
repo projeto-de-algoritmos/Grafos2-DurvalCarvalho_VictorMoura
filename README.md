@@ -9,6 +9,23 @@ sequência de cambios de uma moeda para outra.
 	<img src="imgs/betina.gif">
 </p>
 
+# Como rodar o projeto
+
+Crie uma Virtual Env usando o Python 3
+```
+virtualenv -p python3 env
+```
+
+Instale os prerequisitos
+```
+pip install -r requirements.txt
+```
+
+Execute o server da aplicação
+```
+python api/apy.py
+```
+
 # Cenário
 
 Imagine o seguinte cenário. Você tem R$1.000 Reais e quer converter Rublos.

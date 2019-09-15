@@ -1,0 +1,3 @@
+Flask-API == 1.1
+Flask-Cors == 3.0
+requests == 2.22
