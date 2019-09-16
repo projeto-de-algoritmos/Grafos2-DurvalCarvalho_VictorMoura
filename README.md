@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 Execute o server da aplicação
 ```
-python api/apy.py
+python api/api.py
 ```
 
 Abra o localhost na porta 5000
