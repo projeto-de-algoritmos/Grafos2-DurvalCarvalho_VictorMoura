@@ -15,6 +15,10 @@ Crie uma Virtual Env usando o Python 3
 ```
 virtualenv -p python3 env
 ```
+Ative a virtual env
+```
+source env/bin/activate
+```
 
 Instale os prerequisitos
 ```
