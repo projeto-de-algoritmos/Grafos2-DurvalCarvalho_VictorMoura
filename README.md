@@ -26,10 +26,8 @@ Execute o server da aplicação
 python api/apy.py
 ```
 
-Abra o localhost na porta 500
-"""
-http://localhost:5000
-"""
+Abra o localhost na porta 5000
+[http://localhost:5000](http://localhost:5000)
 
 # Cenário
 
